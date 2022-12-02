@@ -1,22 +1,34 @@
-@font-face {
-font-family: "Vogue";
-src: url("Vogue.ttf") format("truetype");
-    font-style: normal;
-    font-weight: normal;
-}
-.cover {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 55px;
-    height: 865px;
-}
-.cover-img-photo {
-    width: 100%;
-}
-.timer-block {
-    margin-top: 100px;
-}
-.site-index {
+#time-down-counter {
+    font-size: 4.5em;
     display: flex;
+    justify-content: space-evenly;
+}
+#img-2 {
+    position: absolute;
+    width: 45%;
+    bottom: -11px;
+    right: -80px;
+    transform: rotate(10deg);
+}
+#img-3 {
+    position: absolute;
+    width: 45%;
+    bottom: -11px;
+    right: 0px;
+    transform: rotate(-10deg);
+}
+.round-guest {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+}
+.block-guest {
+    width: 230px;
+    margin: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wish-list {
+    font-size: 1.5em;
 }
