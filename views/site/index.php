@@ -27,7 +27,7 @@ $this->title = 'День рождения';
         <p class="text-center">По окончанию таймера меняется на текст</p>
     </div>
     <div class="row  pt-5 pb-5 bg-light">
-        <div class="col-6">
+        <div class="col">
             <h1 class="text-start pr-2 mb-5">Обо мне</h1>
             <p>
                 Следует отметить, что новая модель организационной деятельности не оставляет шанса для своевременного
@@ -51,7 +51,7 @@ $this->title = 'День рождения';
                 первоочередных требований.
             </p>
         </div>
-        <div class="col-6">
+        <div class="col photo-me">
             <div class="position-relative">
                 <img class="position-relative" src="/img/title_vogue.jpg">
                 <img class="position-absolute" src="/img/photo1.jpg" id="img-3">

@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-evenly;
 }
+
 #img-2 {
     position: absolute;
     width: 45%;
@@ -10,6 +11,7 @@
     right: -80px;
     transform: rotate(10deg);
 }
+
 #img-3 {
     position: absolute;
     width: 45%;
@@ -17,11 +19,13 @@
     right: 0px;
     transform: rotate(-10deg);
 }
+
 .round-guest {
     border-radius: 50%;
     width: 180px;
     height: 180px;
 }
+
 .block-guest {
     width: 230px;
     margin: 30px 40px;
@@ -29,6 +33,18 @@
     flex-direction: column;
     align-items: center;
 }
+
 .wish-list {
     font-size: 1.5em;
+}
+
+@media (min-width: 300px) {
+    .photo-me {
+        position: relative;
+        display: none;
+    }
+
+    #time-down-counter {
+        font-size: 3.5em;
+    }
 }
