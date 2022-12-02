@@ -1,8 +1,11 @@
 <?php
 
 /** @var yii\web\View $this */
+/** @var $model */
 
 use aneeshikmat\yii2\Yii2TimerCountDown\Yii2TimerCountDown;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 $this->title = 'День рождения';
 ?>
@@ -101,7 +104,26 @@ $this->title = 'День рождения';
     </div>
     <div class="row  pt-5 pb-5 bg-light">
         <h1 class="text-center">Форма заявки на посещение юбилея</h1>
-
+        <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
+            <div class="alert alert-success">
+                Благодарим Вас за обращение к нам. Мы ответим вам как можно скорее.
+            </div>
+        <?php else: ?>
+        <div class="contact_form_info">
+            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <?= $form->field($model, 'name') ?>
+                    <?= $form->field($model, 'phone') ?>
+                    <?= $form->field($model, 'email') ?>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                    <?= Html::submitButton('Связаться', ['class' => 'btn btn-dark', 'name' => 'contact-button']) ?>
+            </div>
+            <?php ActiveForm::end(); ?>
+        </div>
+        <?php endif; ?>
     </div>
     <div class="row  pt-5 pb-5 text-white bg-secondary">
         <h1 class="text-center">Гарантированная предоплатв</h1>
