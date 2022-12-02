@@ -38,12 +38,10 @@
     font-size: 1.5em;
 }
 
-@media (min-width: 300px) {
+@media (max-width: 300px) {
     .photo-me {
         position: relative;
-        display: none;
     }
-
     #time-down-counter {
         font-size: 3.5em;
     }

@@ -119,7 +119,7 @@ $this->title = 'День рождения';
                 </div>
             </div>
             <div class="form-group mt-3">
-                    <?= Html::submitButton('Связаться', ['class' => 'btn btn-dark', 'name' => 'contact-button']) ?>
+                    <?= Html::submitButton('Отправить', ['class' => 'btn btn-dark', 'name' => 'contact-button']) ?>
             </div>
             <?php ActiveForm::end(); ?>
         </div>
