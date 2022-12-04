@@ -8,12 +8,12 @@ class PollAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
-    public $css = [
 
+    public $css = [
+        'css/poll.css'
     ];
     public $js = [
-//        'https://unpkg.com/@mojs/core',
-//        'https://cdn.jsdelivr.net/npm/@mojs/core'
+        'js/poll.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
