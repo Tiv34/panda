@@ -6,6 +6,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
 {
     public $id;
     public $username;
+    public $name;
     public $password;
     public $authKey;
     public $accessToken;
@@ -13,15 +14,17 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     private static $users = [
         '100' => [
             'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
+            'username' => '79263754623',
+            'password' => '79263754623',
+            'name' => 'Лёвушка',
             'authKey' => 'test100key',
             'accessToken' => '100-token',
         ],
         '101' => [
             'id' => '101',
-            'username' => 'demo',
-            'password' => 'demo',
+            'username' => '79169992973',
+            'password' => '79169992973',
+            'name' => 'Именинница',
             'authKey' => 'test101key',
             'accessToken' => '101-token',
         ],

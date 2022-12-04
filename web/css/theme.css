@@ -37,12 +37,18 @@
 .wish-list {
     font-size: 1.5em;
 }
+.site-login {
+    margin-top: 18%;
+}
 
-@media (max-width: 300px) {
+@media (max-width: 400px) {
     .photo-me {
         position: relative;
     }
     #time-down-counter {
         font-size: 3.5em;
+    }
+    .site-login {
+        margin-top: 45%;
     }
 }

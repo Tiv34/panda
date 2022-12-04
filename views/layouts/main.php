@@ -40,18 +40,18 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => '@w
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
-//            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Опрос', 'url' => ['/site/poll']],
 //            ['label' => 'Contact', 'url' => ['/site/contact']],
-//            Yii::$app->user->isGuest
-//                ? ['label' => 'Login', 'url' => ['/site/login']]
-//                : '<li class="nav-item">'
-//                    . Html::beginForm(['/site/logout'])
-//                    . Html::submitButton(
-//                        'Logout (' . Yii::$app->user->identity->username . ')',
-//                        ['class' => 'nav-link btn btn-link logout']
-//                    )
-//                    . Html::endForm()
-//                    . '</li>'
+            Yii::$app->user->isGuest
+                ? ['label' => 'Вход', 'url' => ['/site/login']]
+                : '<li class="nav-item">'
+                    . Html::beginForm(['/site/logout'])
+                    . Html::submitButton(
+                        'Выйти (' . Yii::$app->user->identity->name . ')',
+                        ['class' => 'nav-link btn btn-link logout']
+                    )
+                    . Html::endForm()
+                    . '</li>'
         ]
     ]);
     NavBar::end();
