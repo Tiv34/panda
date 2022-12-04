@@ -136,6 +136,6 @@ timeline
 new MojsPlayer({
     add: timeline,
     isPlaying: true,
-    isRepeat: false,
+    isRepeat: true,
     isHidden: true,
 });
