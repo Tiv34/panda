@@ -1,0 +1,43 @@
+body, html {
+    overflow: hidden;
+}
+.character {
+    color: white;
+    font-size: 68px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    line-height: .475;
+    font-family: Oswald, monospace;
+}
+
+.word_char3 {
+    margin-left: -73px !important;
+}
+.word_char1 {
+    margin-left: -70px !important;
+}
+.word_char2 {
+    margin-left: -37px !important;
+}
+.word_char4 {
+    margin-left: -2px !important;
+}
+.submit-repeat {
+    position: absolute;
+    z-index: 1;
+    top: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: all 5s ease;
+}
+.hidden {
+    opacity: 0;
+}
+

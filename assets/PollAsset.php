@@ -10,10 +10,7 @@ class PollAsset extends AssetBundle
     public $baseUrl = '@web';
 
     public $css = [
-        'css/poll.css'
-    ];
-    public $js = [
-        'js/poll.js',
+        'css/poll/poll.css'
     ];
     public $depends = [
         'yii\web\YiiAsset',

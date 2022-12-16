@@ -10,7 +10,7 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
@@ -43,12 +43,29 @@ $config = [
             ],
         ],
         'db' => $db,
+//        'urlManager' => [
+//            'enablePrettyUrl' => true,
+//            'showScriptName' => false,
+//            'rules' => [
+//                'poll/<id>' => 'poll',
+//            ],
+//        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
+            'normalizer' => [
+                'class' => \yii\web\UrlNormalizer::class,
+                'collapseSlashes' => true,
+                'normalizeTrailingSlash' => true,
             ],
+            'showScriptName' => false,
+            'rules' =>
+                [
+                    'class' => \yii\web\UrlRule::class,
+                    'pattern' => '<controller>/<action>/<id>',
+                    'route' => '<controller>/<action>',
+                ]
         ],
+
         'authManager' => [
             'class' => 'yii\rbac\PhpManager',
         ],

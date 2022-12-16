@@ -2,8 +2,10 @@
 
 namespace app\controllers;
 
+use app\models\PollForm;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -132,7 +134,23 @@ class SiteController extends Controller
      */
     public function actionPoll()
     {
-        return $this->render('poll', []);
+        $model = new PollForm();
+        if (Yii::$app->request->post('next')) {
+            return $this->redirect(['site/poll-end']);
+        }
+        if ($model->load(Yii::$app->request->post())) {
+            return $this->redirect(['site/poll-end']);
+        }
+        return $this->render('poll/page-1', [
+            'model' => $model,
+        ]);
     }
 
+    public function actionPollEnd()
+    {
+        if (Yii::$app->request->post('repeat')) {
+            return $this->redirect(['site/poll']);
+        }
+        return $this->render('poll/end', []);
+    }
 }
