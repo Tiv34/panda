@@ -18,7 +18,8 @@
         "yiisoft/yii2": "~2.0.45",
         "yiisoft/yii2-bootstrap5": "~2.0.2",
         "yiisoft/yii2-symfonymailer": "~2.0.3",
-        "aneeshikmat/yii2-time-down-counter": "v1.1.0-stable"
+        "aneeshikmat/yii2-time-down-counter": "v1.1.0-stable",
+        "artem-frolov/yii-sass": "2.*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
@@ -37,6 +38,7 @@
         "allow-plugins": {
             "yiisoft/yii2-composer" : true
         },
+        "platform-check": false,
         "process-timeout": 1800,
         "fxp-asset": {
             "enabled": false

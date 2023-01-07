@@ -9,6 +9,8 @@ body, html {
     position: relative;
     width: 100%;
     height: 100%;
+    justify-content: center;
+    display: flex;
 }
 
 #footer {
@@ -16,22 +18,45 @@ body, html {
 }
 
 body {
-    background: rgba(241, 226, 215, 0.2);
     position: relative;
-    background: #FD5061;
+    background: #fc4a1a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.submit-repeat-btm {
-    background: rgba(241, 226, 215, 0.2);
+.submit-poll-btm {
+    background: #fd1645;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2044fc, #fa2651);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2044fc, #fa2651); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #ffffff;
-    padding: 12px;
+    padding: 16px;
     border-radius: 15px;
+    width: 300px;
     border: none;
-    font-size: larger;
+    font-size: 25px;
 }
-
-.submit-repeat-btm:hover {
-    background: rgba(241, 226, 215, 0.37);
+.submit-poll-big-btm {
+    width: 350px;
+}
+#pyramid {
+    right: -400px;
+    bottom: -200px;
+    width: 1200px;
+    position: fixed;
+    z-index: -1;
+}
+#pyramid_2 {
+    top: -200px;
+    left: -400px;
+    width: 1200px;
+    position: fixed;
+    z-index: -1;
+    transform: scale(-1, 1);
+}
+.submit-poll-btm:hover {
+    background: #fd1645;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1239fd, #fd1645);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1239fd, #fd1645); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #main {

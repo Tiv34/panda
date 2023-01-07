@@ -1,9 +1,8 @@
 const COLORS = {
-    RED:      '#FD5061',
     YELLOW:   '#FFCEA5',
     BLACK:    '#29363B',
     WHITE:    'white',
-    VINOUS:   '#A50710'
+    VINOUS:   '#f7b733'
 }
 
 const BG_OPTS = {
@@ -22,12 +21,6 @@ const whiteBg = new mojs.Shape({
     fill:           COLORS.WHITE
 });
 
-const redBg = new mojs.Shape({
-    ...BG_OPTS,
-    fill:         COLORS.RED,
-    delay:        50,
-    easing:       'quad.out'
-});
 
 const burst1 = new mojs.Burst({
     count:    5,
@@ -110,7 +103,6 @@ const SLAP_OPTS = {
 let SHIFTX = 4*CHAR_STEP;
 const bounceCurve = mojs.easing.path('M0,-100 C0,-100 15.6877613,115.487686 32.0269814,74.203186 C62.0118605,-1.559962 100.057489,-0.0941416292 100.057489,-0.0941416292');
 const nBounceCurve = (p) => { return 2 - bounceCurve(p) };
-console.log(-4*CHAR_STEP + X_SHIFT);
 
 const char1 = new mojs.Shape({
     ...charOpts,
@@ -595,7 +587,6 @@ wordTimeline
 const timeline = new mojs.Timeline;
 
 timeline.add(
-    whiteBg, redBg,
     burst1, burst2,
     circle1, circle2,
     shapesTimeline,

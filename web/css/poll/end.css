@@ -40,4 +40,33 @@ body, html {
 .hidden {
     opacity: 0;
 }
+.block-poll {
+    position: absolute;
+    z-index: -1;
+    width: 500px;
+    height: 400px;
+    top: 31%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: all 5s ease;
+    background: rgba(41, 54, 59, 0.85);
+
+}
+@media only screen and (max-width: 700px) {
+    #pyramid_2 {
+        display: none;
+    }
+    .block-poll {
+        width: 93%;
+        height: 350px;
+        top: 27%;
+    }
+    .submit-poll-big-btm {
+        width: 240px!important;
+        font-size: 18px!important;
+    }
+}
 

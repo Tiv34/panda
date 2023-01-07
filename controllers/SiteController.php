@@ -132,21 +132,20 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionPoll()
+    public function actionPoll(): Response|string
     {
         $model = new PollForm();
         if (Yii::$app->request->post('next')) {
-            return $this->redirect(['site/poll-end']);
-        }
-        if ($model->load(Yii::$app->request->post())) {
-            return $this->redirect(['site/poll-end']);
+            return $this->render('poll/example', [
+                'model' => $model,
+            ]);
         }
         return $this->render('poll/page-1', [
             'model' => $model,
         ]);
     }
 
-    public function actionPollEnd()
+    public function actionPollEnd(): Response|string
     {
         if (Yii::$app->request->post('repeat')) {
             return $this->redirect(['site/poll']);
