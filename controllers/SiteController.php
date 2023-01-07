@@ -3,7 +3,9 @@
 namespace app\controllers;
 
 use app\models\PollForm;
+use app\models\Question;
 use Yii;
+use yii\db\Exception;
 use yii\filters\AccessControl;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -14,30 +16,13 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
+    private Question $question;
+
     /**
      * {@inheritdoc}
      */
     public function behaviors()
     {
-//        return [
-//            'access' => [
-//                'class' => AccessControl::class,
-//                'only' => ['logout'],
-//                'rules' => [
-//                    [
-//                        'actions' => ['logout'],
-//                        'allow' => true,
-//                        'roles' => ['@'],
-//                    ],
-//                ],
-//            ],
-//            'verbs' => [
-//                'class' => VerbFilter::class,
-//                'actions' => [
-//                    'logout' => ['post'],
-//                ],
-//            ],
-//        ];
         return [
             'access' => [
                 'class' => AccessControl::class,
@@ -56,6 +41,12 @@ class SiteController extends Controller
                 ],
             ],
         ];
+    }
+
+    public function __construct($id, $module, $config = [])
+    {
+        $this->question = new Question();
+        parent::__construct($id, $module, $config);
     }
 
     /**
@@ -84,7 +75,6 @@ class SiteController extends Controller
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post())) {
             $model->contact(Yii::$app->params['adminEmail']);
-//            $post = Yii::$app->request->post('ContactForm');
             Yii::$app->session->setFlash('contactFormSubmitted');
             return $this->refresh();
         }
@@ -131,13 +121,42 @@ class SiteController extends Controller
      * Displays contact page.
      *
      * @return Response|string
+     * @throws Exception
      */
     public function actionPoll(): Response|string
     {
         $model = new PollForm();
+        if (Yii::$app->request->post('answer')) {
+            $post = Yii::$app->request->post();
+            $t = strtotime('now');
+            $data = [
+                'date_answer' => date('y-m-d H:i:s',$t),
+                'question_id' => $post['question_id'],
+                'user_id' => 1
+            ];
+            foreach ($post as $key => $value) {
+                if ($value === 'on') {
+                    $data['answer_id'] = $key;
+                    $this->question->saveAnswer($data);
+                }
+            }
+        }
         if (Yii::$app->request->post('next')) {
-            return $this->render('poll/example', [
+            $question = $this->question->getQuestionByUser();
+            if (empty($question)) {
+                return $this->redirect(['site/poll-end']);
+            }
+            $view = match ($question['type']) {
+                '1' => 'checkbox',
+                '2' => 'single',
+                '3' => 'rate',
+                default => 'poll-end',
+            };
+            $answer = $this->question->getAnswerByQuestion($question['id']);
+            return $this->render('poll/'. $view, [
                 'model' => $model,
+                'question' => $question,
+                'answer' => $answer
             ]);
         }
         return $this->render('poll/page-1', [
@@ -151,5 +170,13 @@ class SiteController extends Controller
             return $this->redirect(['site/poll']);
         }
         return $this->render('poll/end', []);
+    }
+
+    public function actionPollExample(): Response|string
+    {
+        $model = new PollForm();
+        return $this->render('poll/example', [
+            'model' => $model,
+        ]);
     }
 }

@@ -43,13 +43,6 @@ $config = [
             ],
         ],
         'db' => $db,
-//        'urlManager' => [
-//            'enablePrettyUrl' => true,
-//            'showScriptName' => false,
-//            'rules' => [
-//                'poll/<id>' => 'poll',
-//            ],
-//        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'normalizer' => [

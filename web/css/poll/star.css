@@ -1,0 +1,14 @@
+.star {
+    width: 48px;
+    height: 48px;
+}
+
+.full-stars g path {
+    fill-rule: nonzero;
+    fill: #ffb608;
+}
+
+svg g path {
+    fill-rule: evenodd;
+    fill: #ffb608;
+}
