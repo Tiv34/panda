@@ -132,7 +132,7 @@ class SiteController extends Controller
             $data = [
                 'date_answer' => date('y-m-d H:i:s',$t),
                 'question_id' => $post['question_id'],
-                'user_id' => 1
+                'user_id' => Yii::$app->user->getId()
             ];
             foreach ($post as $key => $value) {
                 if ($value === 'on') {
@@ -141,7 +141,7 @@ class SiteController extends Controller
                 }
             }
         }
-        if (Yii::$app->request->post('next')) {
+        if (Yii::$app->request->post('next') || Yii::$app->request->post('answer')) {
             $question = $this->question->getQuestionByUser();
             if (empty($question)) {
                 return $this->redirect(['site/poll-end']);

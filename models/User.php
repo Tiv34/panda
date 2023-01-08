@@ -2,6 +2,9 @@
 
 namespace app\models;
 
+use JetBrains\PhpStorm\NoReturn;
+use yii\db\Query;
+
 class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
 {
     public $id;
@@ -9,34 +12,38 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     public $name;
     public $password;
     public $authKey;
-    public $accessToken;
 
-    private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => '79263754623',
-            'password' => '79263754623',
-            'name' => 'Лёвушка',
-            'authKey' => 'test100key',
-//            'accessToken' => '100-token',
-        ],
-        '101' => [
-            'id' => '101',
-            'username' => '79169992973',
-            'password' => '79169992973',
-            'name' => 'Именинница',
-            'authKey' => 'test101key',
-//            'accessToken' => '101-token',
-        ],
-    ];
+    private static $users = [];
 
+    public static function setUsersArray() {
+        $query = (new Query())
+            ->select('*')
+            ->from('user')
+            ->all();
+        $users = [];
+        foreach ($query as $value) {
+            $users[$value['id']] = [
+                'id' => $value['id'],
+                'username' => $value['phone'],
+                'password' => $value['phone'],
+                'name' => $value['site_name'],
+                'authKey' => 'test'.$value['id'].'key',
+            ];
+        }
+        return $users;
+    }
 
     /**
      * {@inheritdoc}
      */
     public static function findIdentity($id)
     {
-        return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
+        $userArray = self::setUsersArray();
+        if (isset($userArray[$id])) {
+           return new static($userArray[$id]);
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -44,7 +51,8 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        foreach (self::$users as $user) {
+        $userArray = self::setUsersArray();
+        foreach ($userArray as $user) {
             if ($user['accessToken'] === $token) {
                 return new static($user);
             }
@@ -61,7 +69,8 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public static function findByUsername($username)
     {
-        foreach (self::$users as $user) {
+        $userArray = self::setUsersArray();
+        foreach ($userArray as $user) {
             if (strcasecmp($user['username'], $username) === 0) {
                 return new static($user);
             }
