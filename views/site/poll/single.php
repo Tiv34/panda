@@ -34,7 +34,7 @@ $this->registerCssFile('@web/css/poll/checkbox.css');
                 if (!empty($answer))
                     foreach ($answer as $value) { ?>
                         <div class="inputGroup">
-                            <input id="option_<?=$value['id']?>" name="<?=$value['id']?>" type="radio" hidden/>
+                            <input id="option_<?=$value['id']?>" name="data_answer" value="<?=$value['id']?>" type="radio" hidden/>
                             <label for="option_<?=$value['id']?>"><?=$value['name']?></label>
                         </div>
                     <?php } ?>

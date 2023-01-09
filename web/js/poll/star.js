@@ -11,22 +11,25 @@ window.onload = function () {
             }
         };
         star.onmouseout = function (e) {
-            this.classList.remove('full-stars');
-            var checkStar = this.getAttribute('data-rating');
-            for (var a = 1; a <= checkStar; a++) {
-                stars[a - 1].classList.remove('full-stars');
-            }
+            var rating = this.getAttribute('data-rating');
+            // if (document.getElementsByName('data_answer')[rating - 1].checked === false) {
+                this.classList.remove('full-stars');
+                for (var a = 1; a <= rating; a++) {
+                    stars[a - 1].classList.remove('full-stars');
+                }
+            // }
         };
         star.onclick = function () {
             var rating = this.getAttribute('data-rating');
-            document.getElementsByName('rating')[rating - 1].checked = true;
-
+            document.getElementsByName('data_answer')[rating - 1].checked = true;
             this.classList.add('full-stars');
-            var checkStar = this.getAttribute('data-rating');
-            for (var a = 1; a <= checkStar; a++) {
-                stars[a - 1].classList.add('full-stars');
-            }
-
+            // for (var a = 1; a <= rating; a++) {
+            //     stars[a - 1].classList.add('full-stars');
+            // }
+            // var NoCheckStar = this.getElementsByClassName('full-stars');
+            // for (var b = 1; b <= NoCheckStar; b++) {
+            //     stars[b - 1].classList.remove('full-stars');
+            // }
         }
     }
 }

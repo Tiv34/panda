@@ -134,15 +134,19 @@ class SiteController extends Controller
                 'question_id' => $post['question_id'],
                 'user_id' => Yii::$app->user->getId()
             ];
-            foreach ($post as $key => $value) {
-                if ($value === 'on') {
-                    $data['answer_id'] = $key;
+//            var_dump($post);die;
+            if (is_array($post['data_answer'])) {
+                foreach ($post['data_answer'] as $value) {
+                    $data['answer_id'] = $value;
                     $this->question->saveAnswer($data);
                 }
+            } else {
+                $data['answer_id'] = $post['data_answer'];
+                $this->question->saveAnswer($data);
             }
         }
         if (Yii::$app->request->post('next') || Yii::$app->request->post('answer')) {
-            $question = $this->question->getQuestionByUser();
+            $question = $this->question->getQuestionByUser(Yii::$app->user->getId());
             if (empty($question)) {
                 return $this->redirect(['site/poll-end']);
             }

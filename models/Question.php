@@ -14,6 +14,7 @@ class Question
             ->select(['question_id'])
             ->from('poll_answer_user')
             ->where(['delete' => 0, 'user_id' => $user_id])
+            ->groupBy('question_id')
             ->all();
         $answer_done = [];
         if (!empty($answer_user)) {
