@@ -8,12 +8,12 @@ use Yii;
 class PollForm extends Model
 {
 
-    public $answer;
+    public $data_answer;
 
     public function rules()
     {
         return [
-            [['answer'], 'required'],
+            [['data_answer'], 'required'],
         ];
     }
 

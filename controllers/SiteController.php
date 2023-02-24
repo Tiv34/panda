@@ -96,10 +96,15 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post())) {
+            $model->username = preg_replace('~\D+~', '', $model->username);
             $model->password = $model->username;
-            if ($model->login()) return $this->goBack();
+            if ($model->login()) {
+                return $this->goBack();
+            } else {
+                $model->addError('username', 'Неверный телефон. Обратитесь к администратору');
+            }
         }
-
+        $model->username = '';
         $model->password = '';
         return $this->render('login', [
             'model' => $model,
@@ -117,24 +122,18 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     * @throws Exception
-     */
+
     public function actionPoll(): Response|string
     {
         $model = new PollForm();
-        if (Yii::$app->request->post('answer')) {
-            $post = Yii::$app->request->post();
+        $post = Yii::$app->request->post();
+        if (Yii::$app->request->isPjax && !empty($post['data_answer'])) {
             $t = strtotime('now');
             $data = [
-                'date_answer' => date('y-m-d H:i:s',$t),
+                'date_answer' => date('y-m-d H:i:s', $t),
                 'question_id' => $post['question_id'],
                 'user_id' => Yii::$app->user->getId()
             ];
-//            var_dump($post);die;
             if (is_array($post['data_answer'])) {
                 foreach ($post['data_answer'] as $value) {
                     $data['answer_id'] = $value;
@@ -145,33 +144,27 @@ class SiteController extends Controller
                 $this->question->saveAnswer($data);
             }
         }
-        if (Yii::$app->request->post('next') || Yii::$app->request->post('answer')) {
-            $question = $this->question->getQuestionByUser(Yii::$app->user->getId());
-            if (empty($question)) {
-                return $this->redirect(['site/poll-end']);
-            }
-            $view = match ($question['type']) {
-                '1' => 'checkbox',
-                '2' => 'single',
-                '3' => 'rate',
-                default => 'poll-end',
-            };
-            $answer = $this->question->getAnswerByQuestion($question['id']);
-            return $this->render('poll/'. $view, [
-                'model' => $model,
-                'question' => $question,
-                'answer' => $answer
-            ]);
+        $count_answer_user = count($this->question->getCheckAnswer(Yii::$app->user->getId()));
+        $question = $this->question->getQuestionByUser(Yii::$app->user->getId());
+        if (empty($question)) {
+            return $this->redirect(['site/poll-end']);
         }
-        return $this->render('poll/page-1', [
+        $answer = $this->question->getAnswerByQuestion($question['id']);
+        $count_question = $this->question->getQuestionByUserCount(Yii::$app->user->getId());
+        return $this->render('poll/index', [
             'model' => $model,
+            'question' => $question,
+            'count_question' => $count_question,
+            'count_user_answer' => $count_answer_user,
+            'answer' => $answer
         ]);
     }
 
     public function actionPollEnd(): Response|string
     {
-        if (Yii::$app->request->post('repeat')) {
-            return $this->redirect(['site/poll']);
+        if (Yii::$app->request->post('repeat') == '1') {
+            $this->question->updateAnswerByUser(Yii::$app->user->getId());
+            return $this->redirect(['poll']);
         }
         return $this->render('poll/end', []);
     }

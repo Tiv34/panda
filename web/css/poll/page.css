@@ -12,7 +12,8 @@
 .block-poll {
     position: relative;
     margin-bottom: 40px;
-    min-width: 360px;
+    min-width: 700px;
+    min-height: 400px;
     color: #ffffff;
     padding: 50px 40px;
     display: flex;
@@ -21,6 +22,8 @@
 .block-poll-center {
     display: flex;
     justify-content: center;
+    align-items: center;
+    box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.55)
 }
 .form-group {
     margin-top: 30px;
@@ -38,6 +41,24 @@ img {
     justify-content: center;
     align-items: center
 }
+#myProgress {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+label {
+    min-width: 600px;
+}
+#myBar {
+    width: 0;
+    height: 15px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    transition-property: width;
+    transition-duration: 2s;
+}
 @media only screen and (max-width: 700px) {
     img {
         width: 65%;
@@ -47,9 +68,11 @@ img {
         padding: 0 5px ;
     }
     .block-poll {
-        padding: 30px 10px;
+        padding: 30px 20px;
         display: flex;
-        flex-direction: column
+        flex-direction: column;
+        min-width: 400px;
+        min-height: 300px;
     }
     .block-poll-content {
         width: 100%;
@@ -64,9 +87,19 @@ img {
     .form-group {
         margin-top: 10px;
     }
+    label {
+        min-width: 400px;
+    }
+    #w-100 {
+        width: 100%;
+    }
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 400px) {
     .block-poll {
+        min-width: 320px;
+        min-height: 0;
+    }
+    label {
         min-width: 0;
     }
 }

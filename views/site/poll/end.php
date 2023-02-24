@@ -8,6 +8,7 @@ PollAsset::register($this);
 
 $this->registerJsFile('@web/js/poll/end.js');
 $this->registerCssFile('@web/css/poll/end.css');
+$this->registerJsFile('@web/js/poll/click.js');
 ?>
 <style>
 
@@ -26,7 +27,7 @@ $this->registerCssFile('@web/css/poll/end.css');
 <div class="block-poll"></div>
 <div class="submit-repeat hidden">
     <input name="repeat" value="1" hidden>
-    <?= Html::submitButton('Пройти опрос повторно', ['class' => 'submit-poll-btm submit-poll-big-btm', 'name' => 'repeat-poll-button']) ?>
+    <?= Html::submitButton('Пройти опрос повторно', ['class' => 'submit-poll-btm submit-poll-big-btm', 'name' => 'repeat', 'value'=>1]) ?>
 </div>
 <?php ActiveForm::end(); ?>
 

@@ -7,15 +7,32 @@
 
 use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
+use yii\widgets\MaskedInput;
 
 $this->title = 'Авторизация';
-//$this->params['breadcrumbs'][] = $this->title;
+$this->registerCssFile('@web/css/login.css');
+$this->registerCssFile('@web/css/poll/checkbox.css');
+$this->registerJsFile('@web/js/mask.js');
+
 ?>
 <div class="site-login">
-        <div class="col-md-6 mx-auto">
-            <h1><?= Html::encode($this->title) ?></h1>
-
+    <div class="col-md-4 mx-auto bg-content block-poll">
+        <div class="w-100 text-center mb-3">
+            <h1>Добрый день, дорогой читатель!</h1>
+        </div>
+        <div class="block-poll-content mb-3">
+            <img class="round-title-img" src="/img/title-pull.jpg">
+        </div>
+        <div class="block-poll-content">
+            <p>
+                Ты попал в закрытый клуб* «Влиятельные личности Оли Александровой».
+                Каждый член клуба повлиял на то, кем я сейчас являюсь.</p>
+            <p>В знак благодарности за себя приглашаю тебя на свой очередной юбилей в 2023 году.</p>
+            <p>Пройди, пожалуйста, короткий опрос и в зависимости от ответов следи за дальнейшим развитием
+                сайта.</p>
             <p>Пожалуйста, заполните номер телефона для входа в систему:</p>
+        </div>
+        <div class="block-poll-content w-75-content">
 
             <?php $form = ActiveForm::begin([
                 'id' => 'login-form',
@@ -28,18 +45,20 @@ $this->title = 'Авторизация';
                 ],
             ]); ?>
 
-            <?= $form->field($model, 'username', ['options'=>['class'=>'mb-3']])->textInput(['autofocus' => true])->label('Телефон') ?>
+            <?= $form->field($model, 'username', ['options' => ['class' => 'mb-3']])->textInput(['autofocus' => true])->label('Телефон')->widget(MaskedInput::class, [
+                'mask' => '+7 (999) 999-99-99',
+            ]) ?>
 
             <?= $form->field($model, 'rememberMe')->checkbox([
-                'template' => "<div class=\"custom-control custom-checkbox\">{input} Запомнит меня</div>\n<div class=\"col-lg-8\">{error}</div>",
+                'template' => "<div class=\"custom-control custom-checkbox\">{input}<span>Запомнит меня</span></div>\n<div class=\"col-lg-8\">{error}</div>",
             ]) ?>
 
             <div class="form-group">
                 <div class="">
-                    <?= Html::submitButton('Войти', ['class' => 'btn btn-primary w-100', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('Войти', ['class' => 'submit-poll-btm w-100', 'name' => 'login-button']) ?>
                 </div>
             </div>
-
-            <?php ActiveForm::end(); ?>
         </div>
+        <?php ActiveForm::end(); ?>
+    </div>
 </div>

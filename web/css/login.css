@@ -1,0 +1,97 @@
+body {
+    background-image: url(login.jpg);
+    background-size:cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.container {
+    color: #ffffff;
+}
+#footer {
+    display: none;
+}
+.submit-poll-btm {
+    background: #fd1645;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2044fc, #fa2651);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2044fc, #fa2651); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+    width: 240px;
+    border: none;
+    font-size: 20px;
+}
+.form-check-input {
+    width: 26px!important;
+    height: 26px!important;
+}
+div.custom-control.custom-checkbox {
+    display: flex!important;
+    align-items: center!important;
+}
+div.custom-control.custom-checkbox > span {
+    margin-left: 8px;
+}
+.bg-content {
+    color: #ffffff;
+    background: rgba(41, 54, 59, 0.85);
+    padding: 30px 20px;
+}
+.block-poll-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+img {
+    width: 90%;
+}
+.round-title-img {
+    border-radius: 280px;
+}
+.block-poll {
+    justify-content: center;
+    position: relative;
+    margin-bottom: 40px;
+    min-width: 700px;
+    min-height: 400px;
+    color: #ffffff;
+    padding: 50px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(41, 54, 59, 0.85);
+}
+#login-form {
+    width: 100%;
+}
+.w-75-content {
+    width: 75%;
+}
+
+@media only screen and (max-width: 700px) {
+    .block-poll {
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        min-width: 400px;
+        min-height: 300px;
+    }
+    .block-poll-content {
+        width: 100%;
+        align-items: center;
+    }
+    .round-title-img {
+        border-radius: 130px;
+    }
+    .block-poll-content h1 {
+        margin-top: 20px;
+    }
+    .w-75-content {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .block-poll {
+        min-width: 320px;
+        min-height: 0;
+    }
+}

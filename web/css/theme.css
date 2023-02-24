@@ -38,7 +38,7 @@
     font-size: 1.5em;
 }
 .site-login {
-    margin-top: 18%;
+    margin-top: 60px;
 }
 
 @media (max-width: 400px) {
@@ -49,6 +49,6 @@
         font-size: 3.5em;
     }
     .site-login {
-        margin-top: 45%;
+        margin-top: 40px;
     }
 }

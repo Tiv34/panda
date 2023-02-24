@@ -53,6 +53,9 @@ body, html {
     text-align: center;
     transition: all 5s ease;
     background: rgba(41, 54, 59, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 @media only screen and (max-width: 700px) {
@@ -61,8 +64,7 @@ body, html {
     }
     .block-poll {
         width: 93%;
-        height: 350px;
-        top: 27%;
+        height: 300px;
     }
     .submit-poll-big-btm {
         width: 240px!important;

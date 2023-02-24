@@ -2,8 +2,7 @@
 
 namespace app\models;
 
-use JetBrains\PhpStorm\NoReturn;
-use yii\db\Query;
+use app\models\dto\User as UserRecord;
 
 class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
 {
@@ -16,18 +15,18 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     private static $users = [];
 
     public static function setUsersArray() {
-        $query = (new Query())
+        $query = UserRecord::find()
             ->select('*')
             ->from('user')
             ->all();
         $users = [];
         foreach ($query as $value) {
-            $users[$value['id']] = [
-                'id' => $value['id'],
-                'username' => $value['phone'],
-                'password' => $value['phone'],
-                'name' => $value['site_name'],
-                'authKey' => 'test'.$value['id'].'key',
+            $users[$value->id] = [
+                'id' => $value->id,
+                'username' => $value->phone,
+                'password' => $value->phone,
+                'name' => $value->site_name,
+                'authKey' => 'test'.$value->id.'key',
             ];
         }
         return $users;
