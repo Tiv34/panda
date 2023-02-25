@@ -13,11 +13,8 @@ PollAsset::register($this);
 $this->registerCssFile('@web/css/poll/page.css');
 $this->registerCssFile('@web/css/poll/checkbox.css');
 $this->registerCssFile('@web/css/poll/star.css');
-$this->registerJsFile('@web/js/poll/remained.js');
 $this->registerJsFile('@web/js/poll/click.js');
 ?>
-<script src="https://unpkg.com/@mojs/core"></script>
-<script src="https://cdn.jsdelivr.net/npm/@mojs/player"></script>
 
 <div id="pyramid">
     <img class="round-title-img" src="/img/geometric.png">
@@ -41,7 +38,9 @@ $this->registerJsFile('@web/js/poll/click.js');
                     'options' => ['data-pjax' => true],
                     'action' => ['poll'],
                     'method' => 'post'
-                ]); ?>
+                ]);
+                $this->registerJsFile('@web/js/poll/remained.js');
+                ?>
                 <?php if (!empty($answer))
                     switch ($question['type']) {
                         case '1':

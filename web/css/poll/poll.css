@@ -36,6 +36,9 @@ body {
     z-index: 1;
     font-size: 20px;
 }
+.submit-poll-btm:disabled {
+    filter: brightness(70%);
+}
 .submit-poll-btm-a {
     background: #fd1645;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2044fc, #fa2651);  /* Chrome 10-25, Safari 5.1-6 */

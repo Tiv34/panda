@@ -42,7 +42,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => '/f
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'Опрос', 'url' => ['/site/poll']],
-//            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Галерея', 'url' => ['/site/gallery']],
             Yii::$app->user->isGuest
                 ? ['label' => 'Вход', 'url' => ['/site/login']]
                 : '<li class="nav-item">'

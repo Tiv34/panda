@@ -122,6 +122,13 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    /**
+     * @return string
+     */
+    public function actionGallery()
+    {
+        return $this->render('gallery', []);
+    }
 
     public function actionPoll(): Response|string
     {

@@ -53,7 +53,7 @@ label {
 #myBar {
     width: 0;
     height: 15px;
-    background-color: #4CAF50;
+    background-color: #2c42f1;
     text-align: center;
     line-height: 30px;
     transition-property: width;
@@ -101,5 +101,20 @@ label {
     }
     label {
         min-width: 0;
+    }
+}
+.ripple {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    position: fixed;
+    border-radius: 50%;
+    border: 1px solid #ffffff59;
+}
+
+@keyframes ripple-effect {
+    to {
+        transform:scale(15);
+        opacity: 0.01;
     }
 }

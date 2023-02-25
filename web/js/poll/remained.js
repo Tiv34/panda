@@ -1,41 +1,40 @@
 function move(plus) {
     var elem = document.getElementById("myBar");
     var width = 0;
+    var count_question = $('#count_question').val();
     var load_form = document.getElementById("load_form");
+    console.log(load_form.value)
+    console.log(count_question)
     if (document.getElementById("count_question").value !== "0") {
         width = Math.round(100 / (document.getElementById("count_question").value));
     }
     var plus_fr = Number(load_form.value);
     if (plus) {
-        plus_fr = Number(load_form.value) + 1;
+      plus_fr = Number(load_form.value) + 1;
     }
     width = plus_fr * Number(width);
-    elem.style.width = width + '%';
+    if (width > 100) {
+        elem.style.width = '100%';
+    } else {
+        elem.style.width = width + '%';
+    }
 }
-
 function click_handler(plus) {
     move(plus);
 }
+$(document).ready(function() {
+    click_handler(false);
+    // $(':input[type="submit"]').prop('disabled', true);
+    // $('.contrain').on('change', 'input', function() {
+    //     if($(this).val() !== '') {
+    //         $(':input[type="submit"]').prop('disabled', false);
+    //     }
+    // });
+    $('.contrain').on('click', '#poll-fr0', function () {
+        click_handler(true);
+    });
+});
 
-function valthisform() {
-    var checkboxs = document.getElementsByName("data_answer");
-    var okay = false;
-    for (var i = 0, l = checkboxs.length; i < l; i++) {
-        if (checkboxs[i].checked) {
-            okay = true;
-            break;
-        }
-    }
-    return okay;
-}
 
-click_handler(false);
-// document.getElementById("poll-fr0").addEventListener("click", click_handler, true);
-document.getElementById("poll-fr0").addEventListener("click", function () {
-    console.log(valthisform())
-    click_handler(true);
-}, {once: false});
-// window.addEventListener("load", click_handler, false);
-// window.addEventListener("onload", click_handler, false);
 
 
