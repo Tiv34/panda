@@ -314,4 +314,9 @@ body * a {
     .galeria .container .contenedorImgs .imagen {
         width: 100%;
     }
+    .fullPreview .wrapper .titulo {
+        font-size: 70px;
+        width: 80%;
+        margin-top: 1rem;
+    }
 }

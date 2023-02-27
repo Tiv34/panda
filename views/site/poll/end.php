@@ -28,6 +28,7 @@ $this->registerJsFile('@web/js/poll/click.js');
 <div class="submit-repeat hidden">
     <input name="repeat" value="1" hidden>
     <?= Html::submitButton('Пройти опрос повторно', ['class' => 'submit-poll-btm submit-poll-big-btm', 'name' => 'repeat', 'value'=>1]) ?>
+    <p class="text-light text-end-poll">Спасибо за участие в опросе. Следи за новостями на этом сайте.</p>
 </div>
 <?php ActiveForm::end(); ?>
 
