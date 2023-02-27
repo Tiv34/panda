@@ -1,60 +1,378 @@
-$(function(){
+$(function () {
     const strL = 'https://images.unsplash.com/photo-';
     const strR = '?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ';
     const imgs = [
         {
-            descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            titulo: 'Happy',
-            url: strL+'1544568100-847a948585b9'+strR,
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1134.JPG',
         },
         {
-            descripcion: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            titulo: 'Pug Life',
-            url: strL+'1517423440428-a5a00ad493e8'+strR,
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1135.JPG',
         },
         {
-            descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            titulo: 'I Love Flowers',
-            url: strL+'1510771463146-e89e6e86560e'+strR,
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1136.JPG',
         },
         {
-            descripcion: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            titulo: 'Cute Puppy',
-            url: strL+'1507146426996-ef05306b995a'+strR,
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1137.JPG',
         },
         {
-            descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            titulo: 'In the beach',
-            url: strL+'1530281700549-e82e7bf110d6'+strR,
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1138.JPG',
         },
         {
-            descripcion: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            titulo: 'Happy Friends',
-            url: strL+'1548199973-03cce0bbc87b'+strR,
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1139.JPG',
         },
         {
-            descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            titulo: 'A Great Dog',
-            url: strL+'1552053831-71594a27632d'+strR,
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1140.JPG',
         },
         {
-            descripcion: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            titulo: 'Universitary Dog',
-            url: strL+'1535930891776-0c2dfb7fda1a'+strR,
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1141.JPG',
         },
         {
-            descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            titulo: 'I Love Brother',
-            url: strL+'1504595403659-9088ce801e29'+strR,
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1142.JPG',
         },
         {
-            descripcion: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            titulo: 'I Want a Bone',
-            url: strL+'1518717758536-85ae29035b6d'+strR,
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_0052.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_0324.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_0601.JPG',
+        },
+        {
+            descripcion: 'Но высокотехнологичная концепция общественного уклада предопределяет высокую востребованность анализа существующих паттернов поведения.',
+            titulo: 'Рыбка',
+            url: '/img/gallery/IMG_0730.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_0999.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1073.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_1622.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_2163.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_2554.JPG',
+        }, {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_2737.JPG',
+        }, {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_3003.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_3320.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_3689.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_3832.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4113.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4136.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4297.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4353.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4429.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4506.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4547.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4582.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4621.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4639.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4654.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4736.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4798.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4829.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4837.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_4920.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_5004.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_5150.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_5195.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_5265.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_5567.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_5625.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_5985.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_5998.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_6128.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_6166.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_6198.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_6205.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_6489.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_6521.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_6700.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_6786.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_6916.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_6974.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_7061.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_7062.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_7098.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_7244.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_7341.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_7446.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_8165.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_8223.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_8264.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_8373.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_8402.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_8706.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_8958.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_9025.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_9281.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_9370.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '',
+            url: '/img/gallery/IMG_9724.JPG',
         },
     ]
 
-    $.each(imgs, function(i, img){
+    $.each(imgs, function (i, img) {
         $('.galeria .contenedorImgs').append(`
       <div class="imagen" style="background-image:url('${img.url}')">
         <p class="nombre">${img.titulo}</p>
@@ -64,13 +382,13 @@ $(function(){
     setTimeout(() => {
         $('.galeria').addClass('vis');
     }, 1000)
-    $('.galeria').on('click', '.contenedorImgs .imagen', function(){
+    $('.galeria').on('click', '.contenedorImgs .imagen', function () {
         var imagen = imgs[$(this).index()].url;
         var titulo = imgs[$(this).index()].titulo;
         var descripcion = imgs[$(this).index()].descripcion;
         $('.galeria').addClass('scale');
         $(this).addClass('activa');
-        if(!$('.fullPreview').length){
+        if (!$('.fullPreview').length) {
             $('body').append(`
         <div class="fullPreview">
           <div class="cerrarModal"></div>
@@ -86,31 +404,31 @@ $(function(){
           </div>
         </div>`
             )
-            $('.fullPreview').fadeIn().css('display','flex');
+            $('.fullPreview').fadeIn().css('display', 'flex');
         }
     })
-    $('body').on('click', '.fullPreview .cerrarModal', function(){
+    $('body').on('click', '.fullPreview .cerrarModal', function () {
         $('.contenedorImgs .imagen.activa').removeClass('activa');
         $('.galeria').removeClass('scale');
-        $(this).parent().fadeOut(function(){
+        $(this).parent().fadeOut(function () {
             $(this).remove();
         })
     })
-    $('body').on('click', '.fullPreview .control', function(){
+    $('body').on('click', '.fullPreview .control', function () {
         var activa = $('.contenedorImgs .imagen.activa');
         var index;
-        if($(this).hasClass('av')){
+        if ($(this).hasClass('av')) {
             index = activa.next().index();
-            if(index < 0) index = 0;
-        }else{
+            if (index < 0) index = 0;
+        } else {
             index = activa.prev().index();
-            if(index < 0) index = imgs.length - 1;
+            if (index < 0) index = imgs.length - 1;
         }
         $('.fullPreview').addClass('anim');
-        setTimeout(()=>{
+        setTimeout(() => {
             $('.contenedorImgs .imagen.activa').removeClass('activa');
             $('.contenedorImgs .imagen').eq(index).addClass('activa');
-            $('.fullPreview').find('.blur').css('background-image', 'url('+imgs[index].url+')');
+            $('.fullPreview').find('.blur').css('background-image', 'url(' + imgs[index].url + ')');
             $('.fullPreview').find('img').attr('src', imgs[index].url);
             $('.fullPreview').find('.titulo').text(imgs[index].titulo);
             $('.fullPreview').find('.desc').text(imgs[index].descripcion);
