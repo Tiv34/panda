@@ -72,7 +72,7 @@ body, html {
     }
     .block-poll {
         width: 93%;
-        height: 400px;
+        height: 80%;
     }
     .submit-poll-big-btm, .text-end-poll {
         width: 240px!important;
