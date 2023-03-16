@@ -12,7 +12,7 @@
 .block-poll {
     position: relative;
     margin-bottom: 40px;
-    min-width: 700px;
+    width: 700px;
     min-height: 400px;
     color: #ffffff;
     padding: 50px 40px;
@@ -59,6 +59,10 @@ label {
     transition-property: width;
     transition-duration: 2s;
 }
+.procent-answer {
+    width:40px;
+    text-align: end;
+}
 @media only screen and (max-width: 700px) {
     img {
         width: 65%;
@@ -71,7 +75,7 @@ label {
         padding: 30px 20px;
         display: flex;
         flex-direction: column;
-        min-width: 400px;
+        width: 660px;
         min-height: 300px;
     }
     .block-poll-content {
@@ -96,7 +100,7 @@ label {
 }
 @media only screen and (max-width: 400px) {
     .block-poll {
-        min-width: 320px;
+        width: 360px;
         min-height: 0;
     }
     label {

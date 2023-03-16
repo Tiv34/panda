@@ -73,4 +73,24 @@ class Question extends \yii\base\BaseObject
     public function saveAnswer($data) {
         Yii::$app->db->createCommand()->insert('poll_answer_user', $data)->execute();
     }
+
+    public function getAllUsersAnswerByQuestion($question_id): array
+    {
+        return  (new Query())
+            ->select(['answer_id', 'count(id) as count'])
+            ->from('poll_answer_user')
+            ->where(['delete' => 0, 'question_id' => $question_id])
+            ->groupBy('answer_id')
+            ->all();
+    }
+
+
+    public function getAllUsersCountAnswerByQuestion($question_id): array
+    {
+        return  (new Query())
+            ->select(['COUNT(DISTINCT user_id) as user_count'])
+            ->from('poll_answer_user')
+            ->where(['delete' => 0, 'question_id' => $question_id])
+            ->one();
+    }
 }

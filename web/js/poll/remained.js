@@ -1,16 +1,13 @@
 function move(plus) {
     var elem = document.getElementById("myBar");
     var width = 0;
-    var count_question = $('#count_question').val();
     var load_form = document.getElementById("load_form");
-    console.log(load_form.value)
-    console.log(count_question)
     if (document.getElementById("count_question").value !== "0") {
         width = Math.round(100 / (document.getElementById("count_question").value));
     }
     var plus_fr = Number(load_form.value);
     if (plus) {
-      plus_fr = Number(load_form.value) + 1;
+        plus_fr = Number(load_form.value) + 1;
     }
     width = plus_fr * Number(width);
     if (width > 100) {
@@ -19,21 +16,45 @@ function move(plus) {
         elem.style.width = width + '%';
     }
 }
-function click_handler(plus) {
-    move(plus);
+
+function click_handler(plus, time) {
+    setTimeout(function () {
+        move(plus);
+    }, time);
 }
-$(document).ready(function() {
-    click_handler(false);
-    // $(':input[type="submit"]').prop('disabled', true);
-    // $('.contrain').on('change', 'input', function() {
-    //     if($(this).val() !== '') {
-    //         $(':input[type="submit"]').prop('disabled', false);
-    //     }
-    // });
+
+function click_plus(time) {
+    setTimeout(function () {
+        var data = $('#poll-form').serialize();
+        $.ajax({
+            url: 'poll-answer',
+            method: 'post',
+            dataType: 'json',
+            data: {data},
+            success: function (data) {
+                $('.procent-answer').each(function (i, obj) {
+                    let id = $(obj).attr('data-percent')
+                    if (typeof data[id] === "undefined") {
+                        $(obj).html('0%')
+                    } else {
+                        $(obj).html(data[id] + '%');
+                    }
+                });
+            }
+        });
+    }, time);
+}
+$(document).ready(function () {
+    click_handler(false, 0);
+    click_plus(0);
     $('.contrain').on('click', '#poll-fr0', function () {
-        click_handler(true);
-    });
+        click_plus(500);
+        click_handler(true, 400);
+    }).on('click', 'input', function () {
+        click_plus(0);
+    })
 });
+
 
 
 

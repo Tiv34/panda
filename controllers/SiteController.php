@@ -4,13 +4,13 @@ namespace app\controllers;
 
 use app\models\PollForm;
 use app\models\Question;
+use app\models\User;
 use Yii;
 use yii\db\Exception;
+use yii\db\Query;
 use yii\filters\AccessControl;
-use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Response;
-use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
@@ -21,7 +21,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             'access' => [
@@ -52,7 +52,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function actions()
+    public function actions(): array
     {
         return [
             'error' => [
@@ -70,7 +70,7 @@ class SiteController extends Controller
      *
      * @return Response | string
      */
-    public function actionIndex()
+    public function actionIndex(): Response|string
     {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post())) {
@@ -88,7 +88,7 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionLogin()
+    public function actionLogin(): Response|string
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -116,7 +116,7 @@ class SiteController extends Controller
      *
      * @return Response
      */
-    public function actionLogout()
+    public function actionLogout(): Response
     {
         Yii::$app->user->logout();
         return $this->goHome();
@@ -125,11 +125,14 @@ class SiteController extends Controller
     /**
      * @return string
      */
-    public function actionGallery()
+    public function actionGallery(): string
     {
         return $this->render('gallery', []);
     }
 
+    /**
+     * @throws Exception
+     */
     public function actionPoll(): Response|string
     {
         $model = new PollForm();
@@ -176,11 +179,49 @@ class SiteController extends Controller
         return $this->render('poll/end', []);
     }
 
-    public function actionPollExample(): Response|string
+    public function actionPollAnswer(): array
     {
-        $model = new PollForm();
-        return $this->render('poll/example', [
-            'model' => $model,
-        ]);
+        if (Yii::$app->request->isAjax) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            $data = Yii::$app->request->post();
+            parse_str($data['data'], $params);
+            $answerRecord = $this->question->getAnswerByQuestion($params['question_id']);
+            $all_answer = $this->question->getAllUsersAnswerByQuestion($params['question_id']);
+            $user_answer_count = $this->question->getAllUsersCountAnswerByQuestion($params['question_id']);
+            $ff = [];
+            foreach ($answerRecord as $answerDb) {
+                $ff[$answerDb['id']] = [
+                    'answer_id' => $answerDb['id'],
+                    'count' => 0
+                ];
+            }
+            foreach ($all_answer as $value) {
+                $ff[$value['answer_id']]['count'] = (int)$value['count'];
+            }
+            foreach ($answerRecord as $answerDb) {
+                if (isset($params['data_answer'])) {
+                    if (is_array($params['data_answer'])) {
+                        foreach ($params['data_answer'] as $param) {
+                            if ($answerDb['id'] == $param) {
+                                $ff[$param]['count'] = $ff[$param]['count'] + 1;
+                            }
+                        }
+                    } else {
+                        $ff[$params['data_answer']]['count'] = $ff[$params['data_answer']]['count'] + 1;
+                        break;
+                    }
+                }
+            }
+            $answer_count = (int)$user_answer_count['user_count'];
+            if (isset($params['data_answer'])) {
+                $answer_count = (int)$user_answer_count['user_count'] + 1;
+            }
+            $all_answer_data = [];
+            foreach ($ff as $value) {
+                $all_answer_data[$value['answer_id']] = round(100 / $answer_count * $value['count']);
+            }
+            return $all_answer_data;
+        }
+        return [];
     }
 }

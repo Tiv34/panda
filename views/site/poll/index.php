@@ -14,6 +14,7 @@ $this->registerCssFile('@web/css/poll/page.css');
 $this->registerCssFile('@web/css/poll/checkbox.css');
 $this->registerCssFile('@web/css/poll/star.css');
 $this->registerJsFile('@web/js/poll/click.js');
+$this->registerJsFile('@web/js/poll/page.js');
 ?>
 
 <div id="pyramid">
@@ -46,19 +47,25 @@ $this->registerJsFile('@web/js/poll/click.js');
                         case '1':
                             foreach ($answer as $value) { ?>
                                 <div class="inputGroup">
-                                    <input id="option_<?= $value['id'] ?>" name="data_answer[]"
+                                    <input class="checker" id="option_<?= $value['id'] ?>" name="data_answer[]"
                                            value="<?= $value['id'] ?>" type="checkbox" hidden/>
-                                    <label class="chevk" for="option_<?= $value['id'] ?>"><?= $value['name'] ?></label>
+                                    <label class="chevk data-answer" for="option_<?= $value['id'] ?>" data-answer="<?= $value['id'] ?>">
+                                        <span class="answer-text"><?= $value['name'] ?></span>
+                                        <span class="procent-answer fw-bold" data-percent="<?=$value['id']?>">0%</span>
+                                    </label>
                                 </div>
                             <?php }
                             break;
                         case '2':
                             foreach ($answer as $value) { ?>
                                 <div class="inputGroup">
-                                    <input id="option_<?= $value['id'] ?>" name="data_answer"
+                                    <input class="checker" id="option_<?= $value['id'] ?>" name="data_answer"
                                            value="<?= $value['id'] ?>"
                                            type="radio" hidden/>
-                                    <label for="option_<?= $value['id'] ?>"><?= $value['name'] ?></label>
+                                    <label class="data-answer" for="option_<?= $value['id'] ?>" data-answer="<?= $value['id'] ?>">
+                                        <span class="answer-text"><?= $value['name'] ?></span>
+                                        <span class="procent-answer fw-bold" data-percent="<?=$value['id']?>">0%</span>
+                                    </label>
                                 </div>
                             <?php }
                             break;
@@ -79,7 +86,7 @@ $this->registerJsFile('@web/js/poll/click.js');
                             }
                             break;
                     } ?>
-                <div class="form-group text-center mt-8">
+                <div class="form-group text-center mt-4">
                     <input name="type_poll" value="<?= $question['type'] ?>" hidden>
                     <input name="question_id" value="<?= $question['id'] ?>" hidden>
                     <input name="count_question" value="<?= $count_question ?>" id="count_question" hidden>

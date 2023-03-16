@@ -8,7 +8,7 @@
 .inputGroup > label {
     padding: 12px 50px 12px 10px;
     width: 100%;
-    display: block;
+    /*display: block;*/
     text-align: left;
     color: black;
     cursor: pointer;
@@ -16,9 +16,12 @@
     z-index: 2;
     transition: color 200ms ease-in;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .inputGroup > label:before {
-    width: 11px;
+    width: 12px;
     height: 10px;
     border-radius: 50%;
     content: '';
@@ -96,3 +99,23 @@
     font-family: 'Fira Sans', sans-serif;
 }
 
+.answer-text {
+    width: 90%;
+}
+@keyframes anim-flipX {
+    0% {
+        opacity: 0;
+        text-shadow: 0 0 40px #fff;
+        -webkit-transform: scale(1.3);
+    }
+    20%, 75% {
+        opacity: 1;
+        text-shadow: 0 0 1px #fff;
+        -webkit-transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        text-shadow: 0 0 50px #212529;
+        -webkit-transform: scale(0);
+    }
+}
