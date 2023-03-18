@@ -71,9 +71,9 @@ body, html {
         display: none;
     }
     .block-poll {
-        top: none;
+        top: 100px;
         width: 93%;
-        height: 90%;
+        height: 80%;
     }
     .submit-poll-big-btm, .text-end-poll {
         width: 240px!important;

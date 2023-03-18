@@ -12,7 +12,8 @@
 .block-poll {
     position: relative;
     margin-bottom: 40px;
-    width: 700px;
+    min-width: 700px;
+    max-width: 750px;
     min-height: 400px;
     color: #ffffff;
     padding: 50px 40px;
@@ -75,7 +76,8 @@ label {
         padding: 30px 20px;
         display: flex;
         flex-direction: column;
-        width: 660px;
+        min-width: auto;
+        max-width: 400px;
         min-height: 300px;
     }
     .block-poll-content {
@@ -92,7 +94,7 @@ label {
         margin-top: 10px;
     }
     label {
-        min-width: 400px;
+        min-width: 350px;
     }
     #w-100 {
         width: 100%;
@@ -100,11 +102,17 @@ label {
 }
 @media only screen and (max-width: 400px) {
     .block-poll {
-        width: 360px;
+        width: 320px;
         min-height: 0;
     }
     label {
         min-width: 0;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .block-poll {
+        width: 250px;
     }
 }
 .ripple {
