@@ -33,7 +33,16 @@ class Question extends \yii\base\BaseObject
             ->one();
     }
 
-    public function getQuestionByUserCount($user_id = 1): bool|int|string
+    public function getCheckAnswerSkip($user_id): bool|array
+    {
+        return PollAnswerUser::find()
+            ->from('poll_answer_user as pau')
+            ->innerJoin('poll_answer as pa', 'pa.id = pau.answer_id')
+            ->where(['pau.delete' => 0, 'pa.skip' => 1, 'pau.user_id' => $user_id])
+            ->count();
+    }
+
+    public function getQuestionByUserCount(): bool|int|string
     {
         return PollQuestion::find()
             ->where(['enable' => 1])

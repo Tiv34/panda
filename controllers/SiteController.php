@@ -4,10 +4,8 @@ namespace app\controllers;
 
 use app\models\PollForm;
 use app\models\Question;
-use app\models\User;
 use Yii;
 use yii\db\Exception;
-use yii\db\Query;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -154,13 +152,15 @@ class SiteController extends Controller
                 $this->question->saveAnswer($data);
             }
         }
-        $count_answer_user = count($this->question->getCheckAnswer(Yii::$app->user->getId()));
-        $question = $this->question->getQuestionByUser(Yii::$app->user->getId());
-        if (empty($question)) {
+        $user = Yii::$app->user->getId();
+        $count_answer_user = count($this->question->getCheckAnswer($user));
+        $question = $this->question->getQuestionByUser($user);
+        $answerSkip = $this->question->getCheckAnswerSkip($user);
+        if (empty($question) || $answerSkip) {
             return $this->redirect(['site/poll-end']);
         }
         $answer = $this->question->getAnswerByQuestion($question['id']);
-        $count_question = $this->question->getQuestionByUserCount(Yii::$app->user->getId());
+        $count_question = $this->question->getQuestionByUserCount();
         return $this->render('poll/index', [
             'model' => $model,
             'question' => $question,

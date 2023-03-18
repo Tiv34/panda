@@ -4,10 +4,7 @@
     justify-content: space-evenly;
 }
 #logo {
-    width: 60%;
-}
-.navbar-brand {
-    text-align: center;
+    width: 46%;
 }
 .navbar-expand-md .navbar-collapse {
     justify-content: flex-end;
