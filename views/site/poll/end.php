@@ -15,12 +15,6 @@ $this->registerJsFile('@web/js/poll/click.js');
 </style>
 <script src="https://unpkg.com/@mojs/core"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mojs/player"></script>
-<div id="pyramid">
-    <img src="/img/geometric.png">
-</div>
-<div id="pyramid_2">
-    <img src="/img/geometric.png">
-</div>
 <?php $form = ActiveForm::begin([
     'id' => 'poll-repeat',
 ]); ?>
@@ -31,4 +25,9 @@ $this->registerJsFile('@web/js/poll/click.js');
     <p class="text-light text-end-poll">Спасибо за участие в опросе. Следи за новостями на этом сайте.</p>
 </div>
 <?php ActiveForm::end(); ?>
-
+<div id="pyramid">
+    <img src="/img/geometric.png">
+</div>
+<div id="pyramid_2">
+    <img src="/img/geometric.png">
+</div>

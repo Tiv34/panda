@@ -17,12 +17,6 @@ $this->registerJsFile('@web/js/poll/click.js');
 $this->registerJsFile('@web/js/poll/page.js');
 ?>
 
-<div id="pyramid">
-    <img class="round-title-img" src="/img/geometric.png">
-</div>
-<div id="pyramid_2">
-    <img class="round-title-img" src="/img/geometric.png">
-</div>
 
 <div class="contrain mt-10">
     <div class="block-poll-bg">
@@ -100,4 +94,11 @@ $this->registerJsFile('@web/js/poll/page.js');
             ?>
         </div>
     </div>
+</div>
+
+<div id="pyramid">
+    <img class="round-title-img" src="/img/geometric.png">
+</div>
+<div id="pyramid_2">
+    <img class="round-title-img" src="/img/geometric.png">
 </div>
