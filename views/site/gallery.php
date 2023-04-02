@@ -1,7 +1,12 @@
 <?php
+/** @var $mini */
 
 $this->registerCssFile('@web/css/gallery/gallery.css');
-$this->registerJsFile('@web/js/gallery/gallery.js');
+if ($mini) {
+    $this->registerJsFile('@web/js/gallery/gallery_min.js');
+} else {
+    $this->registerJsFile('@web/js/gallery/gallery.js');
+}
 
 ?>
 <div class="site-contact">

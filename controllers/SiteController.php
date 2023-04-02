@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\PollForm;
 use app\models\Question;
+use Throwable;
 use Yii;
 use yii\db\Exception;
 use yii\filters\AccessControl;
@@ -67,6 +68,7 @@ class SiteController extends Controller
      * Displays homepage.
      *
      * @return Response | string
+     * @throws Throwable
      */
     public function actionIndex(): Response|string
     {
@@ -78,6 +80,7 @@ class SiteController extends Controller
         }
         return $this->render('index', [
             'model' => $model,
+            'user' => Yii::$app->user->getIdentity()
         ]);
     }
 
@@ -130,6 +133,7 @@ class SiteController extends Controller
 
     /**
      * @throws Exception
+     * @throws Throwable
      */
     public function actionPoll(): Response|string
     {

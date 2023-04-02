@@ -3,63 +3,41 @@
 /** @var yii\web\View $this */
 /** @var $model */
 
-use aneeshikmat\yii2\Yii2TimerCountDown\Yii2TimerCountDown;
+/** @var $user */
+
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
 
 $this->title = 'День рождения';
 ?>
 <div class="site-index">
-    <div class="row  pt-5 pb-5 bg-light">
-        <h1 class="text-center">Заголовок приглашения</h1>
-    </div>
-    <div class="row bg-secondary text-white pt-5 pb-5">
-        <div class="timer-block">
-            <div id="time-down-counter"></div>
-            <?php
-            echo Yii2TimerCountDown::widget([
-                'countDownOver' => 'Да начнётся пир!',
-                'countDownDate' => 1692057601 * 1000,
-//                'countDownDate' => (time()+5) * 1000,
-            ]);
-            ?>
+    <div class="slideDown mb-5">
+        <div class="row bg-secondary-fitten pt-5 pb-5 text-white">
+            <div class="hello-block">
+                <h1>
+                    Привет
+                    <?= $user->name ?>!
+                </h1>
+            </div>
         </div>
-        <p class="text-center">По окончанию таймера меняется на текст</p>
-    </div>
-    <div class="row  pt-5 pb-5 bg-light">
-        <div class="col">
-            <h1 class="text-start pr-2 mb-5">Обо мне</h1>
-            <p>
-                Следует отметить, что новая модель организационной деятельности не оставляет шанса для своевременного
-                выполнения сверхзадачи. В целом, конечно, новая модель организационной деятельности позволяет оценить
-                значение новых предложений. Повседневная практика показывает, что перспективное планирование
-                обеспечивает актуальность новых принципов формирования материально-технической и кадровой базы.
-            </p>
-            <p>
-                Значимость этих проблем настолько очевидна, что перспективное планирование, а также свежий взгляд на
-                привычные вещи — безусловно открывает новые горизонты для первоочередных требований. Таким образом,
-                глубокий уровень погружения обеспечивает актуальность укрепления моральных ценностей.
-            </p>
-            <p>
-                Картельные сговоры не допускают ситуации, при которой независимые государства ассоциативно распределены
-                по отраслям. Являясь всего лишь частью общей картины, элементы политического процесса освещают
-                чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, ассоциативно
-                распределены по отраслям. Равным образом, граница обучения кадров предоставляет широкие возможности для
-                благоприятных перспектив. Для современного мира повышение уровня гражданского сознания требует
-                определения и уточнения первоочередных требований. Разнообразный и богатый опыт говорит нам, что начало
-                повседневной работы по формированию позиции представляет собой интересный эксперимент проверки
-                первоочередных требований.
-            </p>
+        <div class="row bg-secondary-fitten text-white pb-5 timer-block">
+            <script src="/js/timer.js"></script>
         </div>
-        <div class="col photo-me">
-            <div class="position-relative">
-                <img class="position-relative" src="/img/title_vogue.jpg">
-                <img class="position-absolute" src="/img/photo1.jpg" id="img-3">
-                <img class="position-absolute" src="/img/img-3.jpg" id="img-2">
+    </div>
+    <div class="row p-5 about-block">
+<!--        <div class="back-block"></div>-->
+<!--        <div class="image"></div>-->
+        <div class="text">
+            <div>
+                <h1>Обо мне</h1>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae gravida purus. Ut quis elit magna. Fusce et mattis sapien. Sed venenatis magna ut ligula facilisis, eget vulputate neque aliquet. Nulla lacinia condimentum leo non aliquet. Integer
+                et enim dapibus, tempor ipsum non, fringilla enim. Cras semper fermentum dolor, at pharetra dolor ornare sit amet. Morbi eu dictum orci, tincidunt pretium nisi. Sed finibus vulputate eleifend. Nulla ac leo facilisis, fermentum tellus in, feugiat
+                risus. Curabitur in sem luctus, pellentesque justo nec, aliquet velit. Nam euismod est sit amet ultrices consequat.
             </div>
         </div>
     </div>
-    <div class="row  pt-5 pb-5 text-white bg-secondary">
+    <div class="row  pt-5 pb-5 text-white bg-secondary-fitten">
         <h1 class="text-center">Мое окружение: «Давайте знакомиться»</h1>
         <div class="row">
             <div class="d-flex flex-wrap justify-content-center">
@@ -75,16 +53,7 @@ $this->title = 'День рождения';
                     8 => ['Павлова Алина', 'Жизнирадующая обезьянка'],
                     9 => ['Кукушкина Света', 'Удивлённый крокодильчик'],
                 ];
-                for ($i = 1; $i < 10; $i++) { ?>
-                    <div class="block-guest">
-                        <img class="round-guest" src="/img/icon<?= $i ?>.jpg">
-                        <div class="mt-3">
-                            <h4 class="text-center"><?= $guest_party[$i][0] ?></h4>
-                            <p class="text-center"><?= $guest_party[$i][1] ?></p>
-                        </div>
-                    </div>
-                <?php }
-                for ($i = 1; $i < 10; $i++) { ?>
+                for ($i = 1; $i < 9; $i++) { ?>
                     <div class="block-guest">
                         <img class="round-guest" src="/img/icon<?= $i ?>.jpg">
                         <div class="mt-3">
@@ -99,8 +68,8 @@ $this->title = 'День рождения';
     <div class="row  pt-5 pb-5 bg-light">
         <h1 class="text-center">Поздравления</h1>
     </div>
-    <div class="row  pt-5 pb-5 text-white bg-secondary">
-        <h1 class="text-center">Галерея</h1>
+    <div class="row  pt-5 pb-5 text-white bg-secondary-fitten">
+        <?php echo $this->render('gallery', ['mini' => true]); ?>
     </div>
     <div class="row  pt-5 pb-5 bg-light">
         <h1 class="text-center">Форма заявки на посещение юбилея</h1>
@@ -109,23 +78,23 @@ $this->title = 'День рождения';
                 Благодарим Вас за обращение к нам. Мы ответим вам как можно скорее.
             </div>
         <?php else: ?>
-        <div class="contact_form_info">
-            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
-            <div class="row">
-                <div class="col-sm-6 col-md-6">
-                    <?= $form->field($model, 'name') ?>
-                    <?= $form->field($model, 'phone') ?>
-                    <?= $form->field($model, 'email') ?>
+            <div class="contact_form_info">
+                <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <?= $form->field($model, 'name') ?>
+                        <?= $form->field($model, 'phone') ?>
+                        <?= $form->field($model, 'email') ?>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group mt-3">
+                <div class="form-group mt-3">
                     <?= Html::submitButton('Отправить', ['class' => 'btn btn-dark', 'name' => 'contact-button']) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
             </div>
-            <?php ActiveForm::end(); ?>
-        </div>
         <?php endif; ?>
     </div>
-    <div class="row  pt-5 pb-5 text-white bg-secondary">
+    <div class="row  pt-5 pb-5 text-white bg-secondary-fitten">
         <h1 class="text-center">Гарантированная предоплатв</h1>
     </div>
     <div class="row  pt-5 pb-5 bg-light">
@@ -165,7 +134,7 @@ $this->title = 'День рождения';
             </div>
         </div>
     </div>
-    <div class="row  pt-5 pb-5 text-white bg-secondary">
+    <div class="row  pt-5 pb-5 text-white bg-secondary-fitten">
         <h1 class="text-center">Оплата подарка</h1>
     </div>
 </div>
