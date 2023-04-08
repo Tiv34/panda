@@ -2,10 +2,12 @@
 
 namespace app\controllers;
 
+use app\models\dto\User;
 use app\models\PollForm;
 use app\models\Question;
 use Throwable;
 use Yii;
+use yii\data\Pagination;
 use yii\db\Exception;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -72,16 +74,25 @@ class SiteController extends Controller
      */
     public function actionIndex(): Response|string
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post())) {
-            $model->contact(Yii::$app->params['adminEmail']);
-            Yii::$app->session->setFlash('contactFormSubmitted');
-            return $this->refresh();
+        $query = User::find();
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count()]);
+        $pages->defaultPageSize = 9;
+        $models = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+        foreach ($models as $value) {
+            if (empty($value->img)) {
+                $value->img = '/img/icon' . rand(1, 9) . '.jpg';
+                $value->save();
+            }
         }
         return $this->render('index', [
-            'model' => $model,
+            'models' => $models,
+            'pages' => $pages,
             'user' => Yii::$app->user->getIdentity()
         ]);
+
     }
 
     /**
