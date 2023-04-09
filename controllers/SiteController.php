@@ -139,7 +139,7 @@ class SiteController extends Controller
      */
     public function actionGallery(): string
     {
-        return $this->render('gallery', []);
+        return $this->render('gallery', ['mini'=>false]);
     }
 
     /**
