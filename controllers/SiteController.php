@@ -111,7 +111,8 @@ class SiteController extends Controller
             $model->username = preg_replace('~\D+~', '', $model->username);
             $model->password = $model->username;
             if ($model->login()) {
-                return $this->goBack();
+                return $this->redirect(['poll']);
+//                return $this->response->redirect();
             } else {
                 $model->addError('username', 'Неверный телефон. Обратитесь к администратору');
             }
