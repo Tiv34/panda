@@ -78,7 +78,7 @@ class SiteController extends Controller
         $query = User::find();
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count()]);
-        $pages->defaultPageSize = 10;
+        $pages->defaultPageSize = 14;
         $limit = $pages->limit;
         if ($pages->offset === 0) {
             $strong_users = User::findAll(['group_guest'=>$identity->group_guest]);
