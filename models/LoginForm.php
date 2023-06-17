@@ -4,6 +4,8 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
+use app\models\dto\User as UserRecord;
+use yii\db\StaleObjectException;
 
 /**
  * LoginForm is the model behind the login form.
@@ -57,6 +59,10 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
+            $user = UserRecord::findOne(['id'=>$this->getUser()->getId()]);
+            $date = new \DateTime('now');
+            $user->last_online = $date->format('Y-m-d H:i:s');
+            $user->save();
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
         }
         return false;

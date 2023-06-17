@@ -8,7 +8,10 @@
 use yii\bootstrap5\LinkPager;
 
 $this->title = 'День рождения';
+$this->registerJsFile('@web/js/scroll.js');
+
 ?>
+
 <div class="site-index">
     <div class="slideDown mb-5">
         <div class="row bg-secondary-fitten pt-5 pb-4 text-white">
@@ -31,7 +34,7 @@ $this->title = 'День рождения';
         </div>
     </div>
     <?php echo $this->render('about'); ?>
-    <div class="row text-center pt-5 pb-5 text-white bg-secondary-fitten guest-block">
+    <div class="row text-center pt-5 pb-5 text-white bg-secondary-fitten guest-block" id="guest-block">
         <h1 class="text-center">Мое окружение: «Давайте знакомиться»</h1>
         <div class="row">
             <div class="d-flex flex-wrap justify-content-center">
