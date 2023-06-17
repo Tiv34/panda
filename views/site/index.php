@@ -31,7 +31,7 @@ $this->title = 'День рождения';
         </div>
     </div>
     <?php echo $this->render('about'); ?>
-    <div class="row text-center pt-5 pb-5 text-white bg-secondary-fitten">
+    <div class="row text-center pt-5 pb-5 text-white bg-secondary-fitten guest-block">
         <h1 class="text-center">Мое окружение: «Давайте знакомиться»</h1>
         <div class="row">
             <div class="d-flex flex-wrap justify-content-center">

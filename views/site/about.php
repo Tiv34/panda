@@ -9,7 +9,7 @@ $this->registerCssFile('@web/css/carousel.css');
             <h1>Формирование бренда <br> «Оля Александрова»</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row p-0">
         <div class="col my-auto img-block-height">
             <div class="image mx-auto image-about active" data-id="1">
                 <div class="img-shadow"></div>
@@ -50,18 +50,27 @@ $this->registerCssFile('@web/css/carousel.css');
         </div>
 
         <div class="text col about-hgt">
+            <h2 class="mb-4 text-center height-title active" data-slide="1">Этап 1 «Создать базу» <br> 0-20</h2>
+            <h1 class="mb-4 text-center height-title" data-slide="2">Этап 2 «Осознанность» <br> 20-24</h1>
+            <h1 class="mb-4 text-center height-title" data-slide="3">Этап 3 «Стратегия» <br> 25-30</h1>
+            <h3 class="mb-4 text-center height-title" data-slide="4">Этап 4 «Реализация планов» <br> 30-38</h3>
+            <h1 class="mb-4 text-center height-title" data-slide="5">Этап 5 «Передышка» <br> 39-43</h1>
+            <h1 class="mb-4 text-center height-title" data-slide="6">Этап 6 «Второе дыхание» <br> 43+</h1>
+            <h1 class="mb-4 text-center height-title" data-slide="7">Этап 7 «Философия»</h1>
+<!--            <h1 class="mb-4 text-center" data-id="1">sdafdsaf</h1>-->
             <div class="controles">
                 <div class="control ret" id="btnSubmit-ret"></div>
-                <h2 class="title-about active" data-id="1">Детский сад</h2>
+                <h2 class="title-about active padding-last-title" data-id="1">Детский сад</h2>
                 <h2 class="title-about" data-id="2">Школа</h2>
                 <h2 class="title-about" data-id="3">Институт</h2>
-                <h2 class="title-about" data-id="4">«Осознанность другой реальности» 20-24</h2>
-                <h3 class="title-about" data-id="5">«Этап стратегического планирования» 25-30</h3>
-                <h2 class="title-about" data-id="6">«Реализация планов» 30-38</h2>
-                <h2 class="title-about" data-id="7">«Передышка» 39-43</h2>
-                <h2 class="title-about" data-id="8">«Второе дыхание» 43+</h2>
-                <h3 class="title-about" data-id="9">«Философия» Чего хотеть, когда все можешь?!</h3>
+                <h2 class="title-about small-h2" data-id="4">«Осознанность другой реальности»</h2>
+                <h2 class="title-about small-h2" data-id="5">«Этап стратегического планирования»</h2>
+                <h2 class="title-about small-h2" data-id="6">«Реализация планов»</h2>
+                <h2 class="title-about" data-id="7">«Передышка»</h2>
+                <h2 class="title-about" data-id="8">«Второе дыхание»</h2>
+                <h2 class="title-about small-h2 padding-last-title-2" data-id="9">«Философия» Чего хотеть, когда все можешь?!</h2>
                 <div class="control av" id="btnSubmit-av"></div>
+
             </div>
             <div class="text col my-auto text-about active" data-id="1">
                 <div class="img-shadow-2"></div>

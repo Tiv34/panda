@@ -188,7 +188,11 @@ hr.style-volna2 {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
-
+.guest-block {
+    display: flex;
+    justify-content: center;
+}
+.bg-secondary-fitten
 @keyframes slideDown {
     0% {
         transform: translateY(-100%);

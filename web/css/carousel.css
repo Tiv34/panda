@@ -6,10 +6,13 @@
     position: relative;
     display: flex;
     flex-wrap: nowrap;
+    min-height: 700px;
 }
+
 .img-block-height {
     /*height: 500px!important;*/
 }
+
 .about-block .text {
     position: relative;
 }
@@ -20,31 +23,44 @@
     height: 98%;
     left: -15px;
     bottom: -15px;
-    background: #9f785f;
+    background: #b636f5;
     opacity: 0.4;
     transition: background-color 1.5s ease;
 }
+
 .text-about .fs-5 {
     position: relative;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
 }
+
 .text-about .fs-5 li {
     list-style-type: disc;
+    padding-bottom: 10px;
 }
+
 .about-block .text .img-shadow-2 {
     position: absolute;
     width: 200%;
-    height: 200%;
+    min-height: 550px;
     left: -50px;
     bottom: 0;
-    background: #9f785f;
+    background: #b636f5;
     opacity: 0.4;
-    top: -150px;
+    top: -270px;
     transition: background-color 1.5s ease;
+}
+.height-title {
+    display: none;
+}
+.height-title.active {
+    display: block;
+    padding: 10px 0;
+    border-width: 4px;
+    border-style: double;
+    border-radius: 40px 0;
 }
 .about-hgt {
     height: 100%;
-    margin-bottom: 60px;
 }
 
 .about-block .image .img-block {
@@ -81,8 +97,17 @@
 }
 
 .controles .title-about.active {
+    margin: 0 10px;
     display: block;
     text-align: center;
+    width: 250px;
+}
+.padding-last-title {
+    padding-left: 40px
+}
+.padding-last-title-2 {
+    padding-right: 5px;
+    width: 290px;
 }
 
 .controles .title-about {
@@ -95,11 +120,12 @@
     margin: 0 0 30px 0;
     align-items: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 10px;
 }
 
 .about-block .controles .control.av {
-    width: 60px;
+    /*width: 50px;*/
 }
 
 .about-block .controles .control {
@@ -109,7 +135,7 @@
     align-items: center;
     justify-content: center;
     align-content: center;
-    width: 50px;
+    width: 30px;
     height: 30px;
     position: relative;
     cursor: pointer;
@@ -117,18 +143,20 @@
 }
 
 .about-block .controles .control.ret {
-    width: 60px;
+    width: 30px;
     transform: rotate(180deg);
 }
 
 .about-block .controles .control {
+    border-radius: 15px;
+    background: #d2d2d2;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     align-content: center;
-    width: 50px;
+    width: 30px;
     height: 30px;
     position: relative;
     cursor: pointer;
@@ -136,30 +164,33 @@
 }
 
 .about-block .controles .control:before {
-    left: 0;
-    width: 80%;
-    height: 1px;
-    background-color: #212529;
+    /*left: 0;*/
+    /*width: 80%;*/
+    /*height: 1px;*/
+    /*background-color: #212529;*/
 }
 
 .about-block .controles .control:before, .about-block .controles .control:after {
     content: "";
-    position: absolute;
 }
 
 .about-block .controles .control:after {
-    right: 0;
+    position: absolute;
+    right: 12px;
     width: 10px;
     height: 10px;
-    border: 2px solid #212529;
+    border: 3px solid #212529;
     border-bottom: 0;
     border-left: 0;
     transform: rotate(45deg);
 }
+.controles .title-about.active {
+    width: 440px;
+}
 
 @media only screen and (max-width: 1400px) {
     .about-block .text .img-shadow-2 {
-        left: -10px;
+        left: -30px;
     }
 }
 
@@ -173,28 +204,47 @@
     .about-block {
         flex-direction: column;
     }
+
     .about-block .text .img-shadow-2 {
         top: -20px;
     }
+
     .about-block .text {
         margin-top: 60px !important;
     }
 }
 
 @media (max-width: 767px) {
-
+    .controles .title-about.active {
+        max-width: 250px;
+        width: 250px;
+    }
     .about-block {
         border-radius: 40px 40px 0 0;
-        padding: 20px!important;
+    }
+    .small-h2 {
+        font-size: 20px;
     }
     .about-block .text .img-shadow-2 {
         left: -100px;
+        height: 200%;
     }
+
     .about-block .image img {
         width: 330px;
     }
+
     .about-block .image {
         width: 330px;
+    }
+
+    .text-about .fs-5 {
+        padding-bottom: 0;
+    }
+    .about-block .controles .control:after {
+        border: 2px solid #212529;
+        border-bottom: 0;
+        border-left: 0;
     }
 }
 
@@ -202,6 +252,7 @@
     .about-block .image img {
         width: 230px;
     }
+
     .about-block .image {
         width: 230px;
     }
@@ -226,26 +277,51 @@ span.vertical-shake {
     animation: tilt-n-move-shaking 0.15s infinite;
     color: red;
 }
+
 .about-block span {
     display: inline-block;
 }
+
 .bom-bom {
-    color: #03af03;
+    color: #028f02;
 }
+
 .bom-bom-2 {
     color: #a1a101;
 }
+
 @keyframes vertical-shaking {
-    0% { transform: translateY(0) }
-    25% { transform: translateY(3px) }
-    50% { transform: translateY(-3px) }
-    75% { transform: translateY(3px) }
-    100% { transform: translateY(0) }
+    0% {
+        transform: translateY(0)
+    }
+    25% {
+        transform: translateY(3px)
+    }
+    50% {
+        transform: translateY(-3px)
+    }
+    75% {
+        transform: translateY(3px)
+    }
+    100% {
+        transform: translateY(0)
+    }
 }
+
 @keyframes tilt-n-move-shaking {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(3px, 3px) rotate(3deg); }
-    50% { transform: translate(0, 0) rotate(0); }
-    75% { transform: translate(-3px, 3px) rotate(-3deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(3px, 3px) rotate(3deg);
+    }
+    50% {
+        transform: translate(0, 0) rotate(0);
+    }
+    75% {
+        transform: translate(-3px, 3px) rotate(-3deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }
