@@ -11,6 +11,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     public $name;
     public $password;
     public $authKey;
+    public $site_name;
 
     private static $users = [];
 
@@ -25,7 +26,8 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
                 'id' => $value->id,
                 'username' => $value->phone,
                 'password' => $value->phone,
-                'name' => $value->site_name,
+                'name' => $value->name,
+                'site_name' => $value->site_name,
                 'authKey' => 'test'.$value->id.'key',
             ];
         }

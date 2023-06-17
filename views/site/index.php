@@ -17,7 +17,7 @@ $this->title = 'День рождения';
                     <img id="champagne" src="/img/cheers.png">
                     <h1 class="title-name-hello">
                         Привет,
-                        <?= $user->name ?>!
+                        <?= $user->site_name ?>!
                     </h1>
                     <img id="champagne" src="/img/champagne.png">
                 </div>
