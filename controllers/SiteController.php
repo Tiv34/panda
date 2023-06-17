@@ -74,13 +74,23 @@ class SiteController extends Controller
      */
     public function actionIndex(): Response|string
     {
+        $identity = Yii::$app->user->getIdentity();
         $query = User::find();
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count()]);
         $pages->defaultPageSize = 10;
+        $limit = $pages->limit;
+        if ($pages->offset === 0) {
+            $strong_users = User::findAll(['group_guest'=>$identity->group_guest]);
+            $limit = $pages->limit - count($strong_users);
+        }
         $models = $query->offset($pages->offset)
-            ->limit($pages->limit)
+            ->where(['<>','group_guest', $identity->group_guest])
+            ->limit($limit)
             ->all();
+        if ($pages->offset === 0) {
+            array_splice($models, 2, 0, $strong_users);
+        }
         foreach ($models as $value) {
             if (empty($value->img)) {
                 $value->img = '/img/icon' . rand(1, 9) . '.jpg';
@@ -90,7 +100,7 @@ class SiteController extends Controller
         return $this->render('index', [
             'models' => $models,
             'pages' => $pages,
-            'user' => Yii::$app->user->getIdentity()
+            'user' => $identity
         ]);
 
     }
