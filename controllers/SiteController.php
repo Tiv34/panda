@@ -81,17 +81,19 @@ class SiteController extends Controller
         $pages->defaultPageSize = 10;
         $strong_users = User::findAll(['group_guest'=>$identity->group_guest]);
         $limit = $pages->limit;
-        if ($pages->offset === 0) {
+        if ($pages->offset === 0 && $identity->group_guest !== 1) {
             $limit = $pages->limit - count($strong_users);
-        }
-//        var_dump($pages->offset + count($strong_users));die;
-        $models = $query->offset($pages->offset - count($strong_users))
-            ->where(['<>','group_guest', $identity->group_guest])
-            ->limit($limit)
-            ->all();
-        if ($pages->offset === 0) {
+            $models = $query->offset($pages->offset - count($strong_users))
+                ->where(['<>','group_guest', $identity->group_guest])
+                ->limit($limit)
+                ->all();
             array_splice($models, 2, 0, $strong_users);
+        } else {
+            $models = $query->offset($pages->offset)
+                ->limit($limit)
+                ->all();
         }
+
         foreach ($models as $value) {
             if (empty($value->img)) {
                 $value->img = '/img/icon' . rand(1, 9) . '.jpg';
