@@ -3,12 +3,15 @@
 /** @var yii\web\View $this */
 /** @var $models */
 /** @var $pages */
+
 /** @var $user */
 
 use yii\bootstrap5\LinkPager;
 
 $this->title = 'День рождения';
 $this->registerJsFile('@web/js/scroll.js');
+$this->registerJsFile('@web/js/popup.js');
+$this->registerCssFile('@web/css/popup.css');
 
 ?>
 
@@ -40,13 +43,24 @@ $this->registerJsFile('@web/js/scroll.js');
             <div class="d-flex flex-wrap justify-content-center">
                 <?php
                 foreach ($models as $model) { ?>
+                <a class="myLinkModal" data-id-guest="<?= $model->id?>" href="#">
                     <div class="block-guest">
-                        <img class="round-guest" src="<?=$model->img?>">
+                        <img class="round-guest" src="<?= $model->img ?>">
                         <div class="mt-3">
                             <h4 class="text-center"><?= $model->name ?></h4>
                         </div>
                     </div>
+                </a>
+                <div class="myModal" data-id="<?=$model->id?>">
+                    <img class="round-guest big-img mb-2" src="<?= $model->img ?>">
+                    <h4 class="text-center"><?= $model->name ?></h4>
+                    <p>Контент</p>
+                    <svg class="myModal__close close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="#fff">
+                        <path d="M12 10.6L6.6 5.2 5.2 6.6l5.4 5.4-5.4 5.4 1.4 1.4 5.4-5.4 5.4 5.4 1.4-1.4-5.4-5.4 5.4-5.4-1.4-1.4-5.4 5.4z"></path>
+                    </svg>
+                </div>
                 <?php } ?>
+                <div class="myOverlay"></div>
             </div>
             <div>
                 <?php
@@ -57,48 +71,48 @@ $this->registerJsFile('@web/js/scroll.js');
             </div>
         </div>
     </div>
-<!--    <div class="row  pt-5 pb-5 bg-light">-->
-<!--        <h1 class="text-center">Поздравления</h1>-->
-<!--    </div>-->
+    <!--    <div class="row  pt-5 pb-5 bg-light">-->
+    <!--        <h1 class="text-center">Поздравления</h1>-->
+    <!--    </div>-->
     <div class="row  pt-5 pb-5 bg-secondary-fitten bg-light">
         <?php echo $this->render('gallery', ['mini' => true]); ?>
     </div>
-<!--    <div class="row  pt-5 pb-5 bg-light">-->
-<!--        <h1 class="text-center">Wish List</h1>-->
-<!--        <div class="row">-->
-<!--            <div class="col wish-list">-->
-<!--                <table class="table">-->
-<!--                    <thead class="thead-dark text-center">-->
-<!--                    <tr>-->
-<!--                        <th scope="col">Подарок</th>-->
-<!--                        <th scope="col">Забронирован гостем</th>-->
-<!--                    </tr>-->
-<!--                    </thead>-->
-<!--                    <tbody class="text-center">-->
-<!--                    <tr class="table-success">-->
-<!--                        <td>Цветы</td>-->
-<!--                        <td>Да</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <td>Браслет</td>-->
-<!--                        <td>Нет</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <td>Духи</td>-->
-<!--                        <td>Нет</td>-->
-<!--                    </tr>-->
-<!--                    <tr class="table-success">-->
-<!--                        <td>Мерседес</td>-->
-<!--                        <td>Да</td>-->
-<!--                    </tr>-->
-<!--                    <tr class="table-success">-->
-<!--                        <td>Поездка в швейцарию на лыжи</td>-->
-<!--                        <td>Да</td>-->
-<!--                    </tr>-->
-<!--                    </tbody>-->
-<!--                </table>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--    <div class="row  pt-5 pb-5 bg-light">-->
+    <!--        <h1 class="text-center">Wish List</h1>-->
+    <!--        <div class="row">-->
+    <!--            <div class="col wish-list">-->
+    <!--                <table class="table">-->
+    <!--                    <thead class="thead-dark text-center">-->
+    <!--                    <tr>-->
+    <!--                        <th scope="col">Подарок</th>-->
+    <!--                        <th scope="col">Забронирован гостем</th>-->
+    <!--                    </tr>-->
+    <!--                    </thead>-->
+    <!--                    <tbody class="text-center">-->
+    <!--                    <tr class="table-success">-->
+    <!--                        <td>Цветы</td>-->
+    <!--                        <td>Да</td>-->
+    <!--                    </tr>-->
+    <!--                    <tr>-->
+    <!--                        <td>Браслет</td>-->
+    <!--                        <td>Нет</td>-->
+    <!--                    </tr>-->
+    <!--                    <tr>-->
+    <!--                        <td>Духи</td>-->
+    <!--                        <td>Нет</td>-->
+    <!--                    </tr>-->
+    <!--                    <tr class="table-success">-->
+    <!--                        <td>Мерседес</td>-->
+    <!--                        <td>Да</td>-->
+    <!--                    </tr>-->
+    <!--                    <tr class="table-success">-->
+    <!--                        <td>Поездка в швейцарию на лыжи</td>-->
+    <!--                        <td>Да</td>-->
+    <!--                    </tr>-->
+    <!--                    </tbody>-->
+    <!--                </table>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 </div>
 

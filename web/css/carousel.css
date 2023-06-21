@@ -23,8 +23,8 @@
     height: 98%;
     left: -15px;
     bottom: -15px;
-    background: #b636f5;
-    opacity: 0.4;
+    background: #c6c6d0;
+    opacity: 0.8;
     transition: background-color 1.5s ease;
 }
 
@@ -36,6 +36,18 @@
 .text-about .fs-5 li {
     list-style-type: disc;
     padding-bottom: 10px;
+}
+.text-about .fs-5 .rety ol > li:nth-child(1) {
+    list-style-type: '😊 ';
+}
+.text-about .fs-5 .rety ol > li:nth-child(2) {
+    list-style-type: '👸 ';
+}
+.text-about .fs-5 .rety ol > li:nth-child(3) {
+    list-style-type: '👼 ';
+}
+.text-about .fs-5 .rety ol > li:nth-child(4) {
+    list-style-type: '💁 ';
 }
 
 .about-block .text .img-shadow-2 {
@@ -49,23 +61,28 @@
     top: -270px;
     transition: background-color 1.5s ease;
 }
+
 .height-title {
     display: none;
 }
+
 .height-title.active {
     display: block;
     padding: 10px 0;
     border-width: 4px;
-    border-style: double;
+    /*border-style: double;*/
     border-radius: 40px 0;
+    color: white;
+    background: linear-gradient(to right, #1239fd, #fd1645);
 }
+
 .about-hgt {
     height: 100%;
 }
 
 .about-block .image .img-block {
     position: relative;
-    z-index: 100;
+    z-index: 10;
 }
 
 .about-block .image {
@@ -98,13 +115,16 @@
 
 .controles .title-about.active {
     margin: 0 10px;
-    display: block;
     text-align: center;
     width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .padding-last-title {
     padding-left: 40px
 }
+
 .padding-last-title-2 {
     padding-right: 5px;
     width: 290px;
@@ -143,12 +163,12 @@
 }
 
 .about-block .controles .control.ret {
-    width: 30px;
+    width: 50px;
     transform: rotate(180deg);
 }
 
 .about-block .controles .control {
-    border-radius: 15px;
+    border-radius: 25px;
     background: #d2d2d2;
     display: flex;
     flex-direction: column;
@@ -156,8 +176,8 @@
     align-items: center;
     justify-content: center;
     align-content: center;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     position: relative;
     cursor: pointer;
     transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) all 0.5s;
@@ -176,16 +196,22 @@
 
 .about-block .controles .control:after {
     position: absolute;
-    right: 12px;
-    width: 10px;
-    height: 10px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
     border: 3px solid #212529;
     border-bottom: 0;
     border-left: 0;
     transform: rotate(45deg);
 }
+
 .controles .title-about.active {
     width: 440px;
+    height: 80px;
+}
+
+.height-title-block {
+    height: 140px;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -210,21 +236,27 @@
     }
 
     .about-block .text {
-        margin-top: 60px !important;
+        margin-top: 40px !important;
     }
 }
 
 @media (max-width: 767px) {
     .controles .title-about.active {
-        max-width: 250px;
         width: 250px;
     }
+
+    .padding-last-title-2 {
+        width: 290px !important;
+    }
+
     .about-block {
         border-radius: 40px 40px 0 0;
     }
+
     .small-h2 {
         font-size: 20px;
     }
+
     .about-block .text .img-shadow-2 {
         left: -100px;
         height: 200%;
@@ -241,10 +273,15 @@
     .text-about .fs-5 {
         padding-bottom: 0;
     }
+
     .about-block .controles .control:after {
         border: 2px solid #212529;
         border-bottom: 0;
         border-left: 0;
+    }
+
+    .height-title-block {
+        height: 120px;
     }
 }
 
@@ -272,6 +309,7 @@
         opacity: 1;
     }
 }
+
 span.vertical-shake {
     /*animation: vertical-shaking 0.25s infinite;*/
     animation: tilt-n-move-shaking 0.15s infinite;

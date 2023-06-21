@@ -1,0 +1,40 @@
+.myModal {
+    width: 90%; height: 400px;
+    max-width: 500px;
+    padding: 18px 9px;
+    background: #fafafa;
+    color: black;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    margin: auto;
+    display: none;
+    opacity: 0;
+    z-index: 999;
+    text-align: center;
+    border-radius: 15px;
+}
+a.myLinkModal:active, /* активная/посещенная ссылка */
+a.myLinkModal:hover,  /* при наведении */
+a.myLinkModal {
+    text-decoration: none;
+    color: white;
+}
+.myModal .myModal__close {
+    position: absolute;
+    top: -40px;
+    right: -5px;
+    cursor: pointer;
+}
+.myOverlay {
+    z-index: 37;
+    position: fixed;
+    background: rgba(0,0,0,.7);
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    cursor: pointer;
+    display: none;
+}
+.big-img {
+    width: 180px!important;
+    height: 180px!important;
+}

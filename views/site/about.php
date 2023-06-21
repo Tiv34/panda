@@ -10,70 +10,71 @@ $this->registerCssFile('@web/css/carousel.css');
         </div>
     </div>
     <div class="row p-0">
-        <div class="col my-auto img-block-height">
+        <div class="col img-block-height">
             <div class="image mx-auto image-about active" data-id="1">
-                <div class="img-shadow"></div>
-                <div class="img-block"><img class="" src="/img/title_vogue.jpg"></div>
-            </div>
-            <div class="image mx-auto image-about" data-id="2">
-                <div class="img-shadow"></div>
-                <div class="img-block"><img class="" src="/img/photo1.jpg"></div>
-            </div>
-            <div class="image mx-auto image-about" data-id="3">
                 <div class="img-shadow"></div>
                 <div class="img-block"><img class="" src="/img/about/photo_1.jpg"></div>
             </div>
-            <div class="image mx-auto image-about" data-id="4">
+            <div class="image mx-auto image-about" data-id="2">
                 <div class="img-shadow"></div>
                 <div class="img-block"><img class="" src="/img/about/photo_2.jpg"></div>
             </div>
-            <div class="image mx-auto image-about" data-id="5">
+            <div class="image mx-auto image-about" data-id="3">
                 <div class="img-shadow"></div>
-                <div class="img-block"><img class="" src="/img/about/photo_3.jpg"></div>
+                <div class="img-block"><img class="" src="/img/about/none.jpg"></div>
             </div>
-            <div class="image mx-auto image-about" data-id="6">
+            <div class="image mx-auto image-about" data-id="4">
                 <div class="img-shadow"></div>
                 <div class="img-block"><img class="" src="/img/about/photo_4.jpg"></div>
             </div>
-            <div class="image mx-auto image-about" data-id="7">
+            <div class="image mx-auto image-about" data-id="5">
                 <div class="img-shadow"></div>
                 <div class="img-block"><img class="" src="/img/about/photo_5.jpg"></div>
             </div>
-            <div class="image mx-auto image-about" data-id="8">
+            <div class="image mx-auto image-about" data-id="6">
                 <div class="img-shadow"></div>
                 <div class="img-block"><img class="" src="/img/about/photo_6.jpg"></div>
             </div>
-            <div class="image mx-auto image-about" data-id="9">
+            <div class="image mx-auto image-about" data-id="7">
                 <div class="img-shadow"></div>
                 <div class="img-block"><img class="" src="/img/about/photo_7.jpg"></div>
+            </div>
+            <div class="image mx-auto image-about" data-id="8">
+                <div class="img-shadow"></div>
+                <div class="img-block"><img class="" src="/img/about/photo_8.jpg"></div>
+            </div>
+            <div class="image mx-auto image-about" data-id="9">
+                <div class="img-shadow"></div>
+                <div class="img-block"><img class="" src="/img/about/photo_9.jpg"></div>
             </div>
         </div>
 
         <div class="text col about-hgt">
-            <h2 class="mb-4 text-center height-title active" data-slide="1">Этап 1 «Создать базу» <br> 0-20</h2>
-            <h1 class="mb-4 text-center height-title" data-slide="2">Этап 2 «Осознанность» <br> 20-24</h1>
-            <h1 class="mb-4 text-center height-title" data-slide="3">Этап 3 «Стратегия» <br> 25-30</h1>
-            <h3 class="mb-4 text-center height-title" data-slide="4">Этап 4 «Реализация планов» <br> 30-38</h3>
-            <h1 class="mb-4 text-center height-title" data-slide="5">Этап 5 «Передышка» <br> 39-43</h1>
-            <h1 class="mb-4 text-center height-title" data-slide="6">Этап 6 «Второе дыхание» <br> 43+</h1>
-            <h1 class="mb-4 text-center height-title" data-slide="7">Этап 7 «Философия»</h1>
-<!--            <h1 class="mb-4 text-center" data-id="1">sdafdsaf</h1>-->
+            <div class="height-title-block">
+            <h2 class="text-center height-title active" data-slide="1">Этап 1 «Создать базу» <br>(от 0 до 20 лет)</h2>
+            <h1 class="text-center height-title" data-slide="2">Этап 2 «Осознанность» <br>(от 20 до 24 лет)</h1>
+            <h1 class="text-center height-title" data-slide="3">Этап 3 «Стратегия» <br>(от 25 до 30 лет)</h1>
+            <h3 class="text-center height-title" data-slide="4">Этап 4 «Реализация планов» <br>(от 30 до 38 лет)</h3>
+            <h1 class="text-center height-title" data-slide="5">Этап 5 «Передышка» <br>(от 39 до 43 лет)</h1>
+            <h1 class="text-center height-title" data-slide="6">Этап 6 «Второе дыхание» <br>(43+ лет)</h1>
+            <h1 class="text-center height-title" data-slide="7">Этап 7 <br> «Философия»</h1>
+            </div>
             <div class="controles">
                 <div class="control ret" id="btnSubmit-ret"></div>
                 <h2 class="title-about active padding-last-title" data-id="1">Детский сад</h2>
                 <h2 class="title-about" data-id="2">Школа</h2>
                 <h2 class="title-about" data-id="3">Институт</h2>
-                <h2 class="title-about small-h2" data-id="4">«Осознанность другой реальности»</h2>
-                <h2 class="title-about small-h2" data-id="5">«Этап стратегического планирования»</h2>
-                <h2 class="title-about small-h2" data-id="6">«Реализация планов»</h2>
-                <h2 class="title-about" data-id="7">«Передышка»</h2>
-                <h2 class="title-about" data-id="8">«Второе дыхание»</h2>
-                <h2 class="title-about small-h2 padding-last-title-2" data-id="9">«Философия» Чего хотеть, когда все можешь?!</h2>
+                <h2 class="title-about small-h2" data-id="4">Новая семья</h2>
+                <h2 class="title-about small-h2" data-id="5">Мечты и планы</h2>
+                <h2 class="title-about small-h2" data-id="6">Работать! Работать! И еще раз работать!</h2>
+                <h2 class="title-about" data-id="7">Диагностика себя и окружения</h2>
+                <h2 class="title-about small-h2" data-id="8">Мне это и не снилось</h2>
+                <h2 class="title-about small-h2 padding-last-title-2" data-id="9">Научиться выбирать лучшее из лучшего</h2>
                 <div class="control av" id="btnSubmit-av"></div>
 
             </div>
             <div class="text col my-auto text-about active" data-id="1">
-                <div class="img-shadow-2"></div>
+<!--                <div class="img-shadow-2"></div>-->
                 <ul class="fs-5">
                     <li>терпеть не могла пенку, винегрет и печенку</li>
                     <li>любила читать стихи на сцене</li>
@@ -88,11 +89,12 @@ $this->registerCssFile('@web/css/carousel.css');
             <div class="text col my-auto text-about" data-id="2">
                 <ul class="fs-5">
                     <li>До 4 класса имела 1 (колы) по физкультуре, потому что не любила носить лыжи</li>
-                    <li>У меня есть три медали, которые мне вручили по опросу одноклассников в 16 лет:
-                        <ol>
+                    <li class="rety">У меня есть три медали, которые мне вручили по опросу одноклассников в 16 лет:
+                        <ol class="pt-2">
+                            <li>Улыбка класса</li>
                             <li>Мисс обаяние</li>
-                            <li>Мисс улыбка</li>
-                            <li>Скромность класса</li>
+                            <li>Ангел 11 «А»</li>
+                            <li>Скромность</li>
                         </ol>
                     </li>
                     <li>Учителя из рук директора школы мне вручили грамоту «Министр финансов», потому что я всегда
@@ -101,7 +103,7 @@ $this->registerCssFile('@web/css/carousel.css');
                     <li>Летом ездила на дачу и играла в свадьбу. <span
                                 class="bom-bom-2"><strong>Сильнее хотела замуж!</strong></span></li>
                 </ul>
-                <div class="img-shadow-2"></div>
+<!--                <div class="img-shadow-2"></div>-->
             </div>
             <div class="text col my-auto text-about" data-id="3">
                 <ul class="fs-5">
@@ -111,14 +113,14 @@ $this->registerCssFile('@web/css/carousel.css');
                     </li>
                     <li><span class="vertical-shake"><strong>Страстно мечтала выйти замуж!!!!!!!!</strong></span></li>
                 </ul>
-                <div class="img-shadow-2"></div>
+<!--                <div class="img-shadow-2"></div>-->
             </div>
             <div class="text col my-auto text-about" data-id="4">
                 <ul class="fs-5">
                     <li>Свадьба. Настойчивый выбор Сережи сделал меня счастливой на многие года.</li>
                     <li>Рождение детей с чувством легкости, что «как-нибудь проживем!» возможен только в 20 лет.</li>
                 </ul>
-                <div class="img-shadow-2"></div>
+<!--                <div class="img-shadow-2"></div>-->
             </div>
             <div class="text col my-auto text-about" data-id="5">
                 <p class="fs-5">Тяжелые мысли для 20-летней девушки - Что делать, когда достиг основных желаний?<br>Первый
@@ -131,7 +133,7 @@ $this->registerCssFile('@web/css/carousel.css');
                     <li>Посмотреть хотя бы одну страну за рубежом</li>
                     <li>Купить машину Volkswagen (именно так я и писала)</li>
                 </ul>
-                <div class="img-shadow-2"></div>
+<!--                <div class="img-shadow-2"></div>-->
             </div>
             <div class="text col my-auto text-about" data-id="6">
                 <ul class="fs-5">
@@ -151,7 +153,7 @@ $this->registerCssFile('@web/css/carousel.css');
                     <li>Третье высшее образование - финансы</li>
                     <li>Мерседесы и шуба в радость!</li>
                 </ul>
-                <div class="img-shadow-2"></div>
+<!--                <div class="img-shadow-2"></div>-->
             </div>
             <div class="text col my-auto text-about" data-id="7">
                 <ul class="fs-5">
@@ -160,7 +162,7 @@ $this->registerCssFile('@web/css/carousel.css');
                     <li>Работа на месте</li>
                     <li>Спортивные привычки – норма</li>
                 </ul>
-                <div class="img-shadow-2"></div>
+<!--                <div class="img-shadow-2"></div>-->
             </div>
             <div class="text col my-auto text-about" data-id="8">
                 <ul class="fs-5">
@@ -173,13 +175,13 @@ $this->registerCssFile('@web/css/carousel.css');
                     <li>Новый уровень отелей - Belmond и Мадейра</li>
                     <li>Сочетание эмоциональности и спокойствия</li>
                 </ul>
-                <div class="img-shadow-2"></div>
+<!--                <div class="img-shadow-2"></div>-->
             </div>
             <div class="text col my-auto text-about" data-id="9">
                 <p class="fs-5">В разработке этап нового планирования.<br>
                     Люблю общаться с людьми и слушать их мечты. Иногда «забираю» мечты друзей себе и делюсь своими.
                 </p>
-                <div class="img-shadow-2"></div>
+<!--                <div class="img-shadow-2"></div>-->
             </div>
         </div>
     </div>

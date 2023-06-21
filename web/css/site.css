@@ -195,7 +195,7 @@ hr.style-volna2 {
     display: flex;
     justify-content: center;
 }
-.bg-secondary-fitten
+
 @keyframes slideDown {
     0% {
         transform: translateY(-100%);
@@ -255,11 +255,13 @@ hr.style-volna2 {
 @media (max-width: 767px) {
     .nav li > form > button.logout {
         display: block;
-        text-align: left;
+        text-align: right;
         width: 100%;
         padding: 10px 0;
     }
-
+    .nav-link {
+        text-align: right;
+    }
     .timer-block {
         border-radius: 0 0 40px 40px;
     }
