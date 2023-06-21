@@ -13,6 +13,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     public $authKey;
     public $site_name;
     public $group_guest;
+    public $show;
 
     private static $users = [];
 
@@ -30,6 +31,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
                 'name' => $value->name,
                 'site_name' => $value->site_name,
                 'group_guest' => $value->group_guest,
+                'show' => $value->show,
                 'authKey' => 'test'.$value->id.'key',
             ];
         }

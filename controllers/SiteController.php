@@ -77,19 +77,21 @@ class SiteController extends Controller
         $identity = Yii::$app->user->getIdentity();
         $query = User::find();
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count()]);
+        $pages = new Pagination(['totalCount' => $countQuery->where(['show' => 1])->count()]);
         $pages->defaultPageSize = 10;
         $strong_users = User::findAll(['group_guest'=>$identity->group_guest]);
         $limit = $pages->limit;
-        if ($pages->offset === 0 && $identity->group_guest !== 1) {
+        if ($pages->offset === 0 && $identity->group_guest !== 1 && $identity->show === 1) {
             $limit = $pages->limit - count($strong_users);
             $models = $query->offset($pages->offset - count($strong_users))
                 ->where(['<>','group_guest', $identity->group_guest])
+                ->andWhere(['show' => 1])
                 ->limit($limit)
                 ->all();
             array_splice($models, 2, 0, $strong_users);
         } else {
             $models = $query->offset($pages->offset)
+                ->where(['show' => 1])
                 ->limit($limit)
                 ->all();
         }

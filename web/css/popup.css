@@ -1,6 +1,6 @@
 .myModal {
     width: 90%; height: 400px;
-    max-width: 500px;
+    max-width: 350px;
     padding: 18px 9px;
     background: #fafafa;
     color: black;
@@ -11,7 +11,7 @@
     opacity: 0;
     z-index: 999;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 30px;
 }
 a.myLinkModal:active, /* активная/посещенная ссылка */
 a.myLinkModal:hover,  /* при наведении */

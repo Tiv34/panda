@@ -4,63 +4,78 @@ $(function () {
     const imgs = [
         {
             descripcion: '',
-            titulo: '',
+            titulo: '1',
             url: '/img/gallery/IMG_1134.JPG',
         },
         {
             descripcion: '',
-            titulo: '',
+            titulo: '2',
             url: '/img/gallery/IMG_1135.JPG',
         },
         {
             descripcion: '',
-            titulo: '',
-            url: '/img/gallery/IMG_1136.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '',
+            titulo: '4',
             url: '/img/gallery/IMG_1137.JPG',
         },
         {
             descripcion: '',
-            titulo: '',
+            titulo: '5',
             url: '/img/gallery/IMG_1138.JPG',
         },
         {
             descripcion: '',
-            titulo: '',
-            url: '/img/gallery/IMG_1139.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '',
-            url: '/img/gallery/IMG_1140.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '',
+            titulo: '8',
             url: '/img/gallery/IMG_1141.JPG',
         },
         {
             descripcion: '',
-            titulo: '',
-            url: '/img/gallery/IMG_1142.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '',
+            titulo: '10',
             url: '/img/gallery/IMG_0052.JPG',
         },
         {
             descripcion: '',
-            titulo: '',
+            titulo: '11',
             url: '/img/gallery/IMG_0324.JPG',
         },
         {
             descripcion: '',
-            titulo: '',
+            titulo: '12',
             url: '/img/gallery/IMG_0601.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '13',
+            url: '/img/gallery/IMG_0730.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '14',
+            url: '/img/gallery/IMG_0999.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '15',
+            url: '/img/gallery/IMG_1073.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '16',
+            url: '/img/gallery/IMG_1622.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '17',
+            url: '/img/gallery/IMG_2163.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '19',
+            url: '/img/gallery/IMG_2737.JPG',
+        },
+        {
+            descripcion: '',
+            titulo: '21',
+            url: '/img/gallery/IMG_3320.JPG',
         },
     ]
 

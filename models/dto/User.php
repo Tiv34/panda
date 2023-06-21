@@ -16,6 +16,7 @@ use yii\db\ActiveRecord;
  * @property integer   $sort
  * @property string    $last_online
  * @property integer   $group_guest
+ * @property integer   $show
  */
 class User extends ActiveRecord
 {

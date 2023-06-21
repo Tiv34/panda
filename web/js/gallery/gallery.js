@@ -14,11 +14,6 @@ $(function () {
         },
         {
             descripcion: '',
-            titulo: '3',
-            url: '/img/gallery/IMG_1136.JPG',
-        },
-        {
-            descripcion: '',
             titulo: '4',
             url: '/img/gallery/IMG_1137.JPG',
         },
@@ -29,23 +24,8 @@ $(function () {
         },
         {
             descripcion: '',
-            titulo: '6',
-            url: '/img/gallery/IMG_1139.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '7',
-            url: '/img/gallery/IMG_1140.JPG',
-        },
-        {
-            descripcion: '',
             titulo: '8',
             url: '/img/gallery/IMG_1141.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '9',
-            url: '/img/gallery/IMG_1142.JPG',
         },
         {
             descripcion: '',
@@ -63,7 +43,7 @@ $(function () {
             url: '/img/gallery/IMG_0601.JPG',
         },
         {
-            descripcion: 'Но высокотехнологичная концепция общественного уклада предопределяет высокую востребованность анализа существующих паттернов поведения.',
+            descripcion: '',
             titulo: '13',
             url: '/img/gallery/IMG_0730.JPG',
         },
@@ -89,16 +69,8 @@ $(function () {
         },
         {
             descripcion: '',
-            titulo: '18',
-            url: '/img/gallery/IMG_2554.JPG',
-        }, {
-            descripcion: '',
             titulo: '19',
             url: '/img/gallery/IMG_2737.JPG',
-        }, {
-            descripcion: '',
-            titulo: '20',
-            url: '/img/gallery/IMG_3003.JPG',
         },
         {
             descripcion: '',
@@ -129,11 +101,6 @@ $(function () {
             descripcion: '',
             titulo: '26',
             url: '/img/gallery/IMG_4297.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '27',
-            url: '/img/gallery/IMG_4353.JPG',
         },
         {
             descripcion: '',
@@ -217,11 +184,6 @@ $(function () {
         },
         {
             descripcion: '',
-            titulo: '44',
-            url: '/img/gallery/IMG_5567.JPG',
-        },
-        {
-            descripcion: '',
             titulo: '45',
             url: '/img/gallery/IMG_5625.JPG',
         },
@@ -237,11 +199,6 @@ $(function () {
         },
         {
             descripcion: '',
-            titulo: '48',
-            url: '/img/gallery/IMG_6128.JPG',
-        },
-        {
-            descripcion: '',
             titulo: '49',
             url: '/img/gallery/IMG_6166.JPG',
         },
@@ -252,18 +209,8 @@ $(function () {
         },
         {
             descripcion: '',
-            titulo: '51',
-            url: '/img/gallery/IMG_6205.JPG',
-        },
-        {
-            descripcion: '',
             titulo: '52',
             url: '/img/gallery/IMG_6489.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '53',
-            url: '/img/gallery/IMG_6521.JPG',
         },
         {
             descripcion: '',
@@ -292,11 +239,6 @@ $(function () {
         },
         {
             descripcion: '',
-            titulo: '59',
-            url: '/img/gallery/IMG_7062.JPG',
-        },
-        {
-            descripcion: '',
             titulo: '60',
             url: '/img/gallery/IMG_7098.JPG',
         },
@@ -314,11 +256,6 @@ $(function () {
             descripcion: '',
             titulo: '63',
             url: '/img/gallery/IMG_7446.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '64',
-            url: '/img/gallery/IMG_8165.JPG',
         },
         {
             descripcion: '',
@@ -342,18 +279,8 @@ $(function () {
         },
         {
             descripcion: '',
-            titulo: '69',
-            url: '/img/gallery/IMG_8706.JPG',
-        },
-        {
-            descripcion: '',
             titulo: '70',
             url: '/img/gallery/IMG_8958.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '71',
-            url: '/img/gallery/IMG_9025.JPG',
         },
         {
             descripcion: '',
@@ -364,11 +291,6 @@ $(function () {
             descripcion: '',
             titulo: '73',
             url: '/img/gallery/IMG_9370.JPG',
-        },
-        {
-            descripcion: '',
-            titulo: '74',
-            url: '/img/gallery/IMG_9724.JPG',
         },
     ]
 
