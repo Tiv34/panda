@@ -54,7 +54,7 @@ $this->registerCssFile('@web/css/popup.css');
                 <div class="myModal" data-id="<?=$model->id?>">
                     <img class="round-guest big-img mb-2" src="<?= $model->img ?>">
                     <h4 class="text-center"><?= $model->name ?></h4>
-                    <p>Контент</p>
+                    <p><?= $model->description ?></p>
                     <svg class="myModal__close close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="#fff">
                         <path d="M12 10.6L6.6 5.2 5.2 6.6l5.4 5.4-5.4 5.4 1.4 1.4 5.4-5.4 5.4 5.4 1.4-1.4-5.4-5.4 5.4-5.4-1.4-1.4-5.4 5.4z"></path>
                     </svg>
