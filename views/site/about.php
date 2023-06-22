@@ -21,7 +21,7 @@ $this->registerCssFile('@web/css/carousel.css');
             </div>
             <div class="image mx-auto image-about" data-id="3">
                 <div class="img-shadow"></div>
-                <div class="img-block"><img class="" src="/img/about/none.jpg"></div>
+                <div class="img-block"><img class="" src="/img/about/photo_3.jpg"></div>
             </div>
             <div class="image mx-auto image-about" data-id="4">
                 <div class="img-shadow"></div>
