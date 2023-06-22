@@ -66,7 +66,7 @@ $this->registerCssFile('@web/css/carousel.css');
                 <h2 class="title-about" data-id="3">Институт</h2>
                 <h2 class="title-about small-h2" data-id="4">Новая семья</h2>
                 <h2 class="title-about small-h2" data-id="5">Мечты и планы</h2>
-                <h2 class="title-about small-h2" data-id="6">Работать! Работать! И еще раз работать!</h2>
+                <h2 class="title-about small-h2" data-id="6">Работать! Работать!<br> И еще раз работать!</h2>
                 <h2 class="title-about" data-id="7">Диагностика себя и окружения</h2>
                 <h2 class="title-about small-h2" data-id="8">Мне это и не снилось</h2>
                 <h2 class="title-about small-h2 padding-last-title-2" data-id="9">Научиться выбирать лучшее из лучшего</h2>
