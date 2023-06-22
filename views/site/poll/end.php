@@ -6,6 +6,8 @@ use yii\widgets\ActiveForm;
 
 PollAsset::register($this);
 
+$this->registerJsFile('@web/js/poll/mojs/mo.umd.js');
+$this->registerJsFile('@web/js/poll/mojs/player.js');
 $this->registerJsFile('@web/js/poll/end.js');
 $this->registerCssFile('@web/css/poll/end.css');
 $this->registerJsFile('@web/js/poll/click.js');
@@ -13,8 +15,6 @@ $this->registerJsFile('@web/js/poll/click.js');
 <style>
 
 </style>
-<script src="https://unpkg.com/@mojs/core"></script>
-<script src="https://cdn.jsdelivr.net/npm/@mojs/player"></script>
 <?php $form = ActiveForm::begin([
     'id' => 'poll-repeat',
 ]); ?>
