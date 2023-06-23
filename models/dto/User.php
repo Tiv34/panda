@@ -13,6 +13,7 @@ use yii\db\ActiveRecord;
  * @property string    $phone
  * @property integer   $phone2
  * @property integer   $group_id
+ * @property string     $img
  * @property integer   $sort
  * @property string    $last_online
  * @property integer   $group_guest

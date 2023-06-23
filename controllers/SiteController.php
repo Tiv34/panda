@@ -98,7 +98,7 @@ class SiteController extends Controller
 
         foreach ($models as $value) {
             if (empty($value->img)) {
-                $value->img = '/img/icon' . rand(1, 9) . '.jpg';
+                $value->img = '/img/guest/icon' . rand(1, 8) . '.jpg';
                 $value->save();
             }
         }
@@ -180,6 +180,18 @@ class SiteController extends Controller
                 }
             } else {
                 $data['answer_id'] = $post['data_answer'];
+
+                // можно ли использовать фотку гостя
+                if ($data['question_id'] === 9) {
+                    $identity = Yii::$app->user->getIdentity();
+                    $user = User::findOne(['id'=>$identity->getId()]);
+                    if ($data['answer_id'] === 29) { // ДА
+                        $user->img = '/img/guest/' . $identity . '.jpg';
+                    } else { // НЕТ
+                        $user->img = '/img/guest/icon' . rand(1, 8) . '.jpg';
+                    }
+                    $user->save();
+                }
                 $this->question->saveAnswer($data);
             }
         }
