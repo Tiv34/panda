@@ -145,7 +145,7 @@
 }
 
 .about-block .controles .control.av {
-    /*width: 50px;*/
+    background: #fd1645;
 }
 
 .about-block .controles .control {
@@ -165,11 +165,11 @@
 .about-block .controles .control.ret {
     width: 50px;
     transform: rotate(180deg);
+    background: #1239fd;
 }
 
 .about-block .controles .control {
     border-radius: 25px;
-    background: #d2d2d2;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -199,7 +199,7 @@
     right: 20px;
     width: 15px;
     height: 15px;
-    border: 3px solid #212529;
+    border: 3px solid #ffffff;
     border-bottom: 0;
     border-left: 0;
     transform: rotate(45deg);
@@ -275,7 +275,7 @@
     }
 
     .about-block .controles .control:after {
-        border: 2px solid #212529;
+        border: 2px solid #ffffff;
         border-bottom: 0;
         border-left: 0;
     }

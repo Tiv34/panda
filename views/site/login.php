@@ -28,7 +28,6 @@ $this->registerJsFile('@web/js/mask.js');
                 Ты попал в закрытый клуб «Влиятельные личности Оли Александровой». Каждый член клуба повлиял на то, кем я сейчас являюсь.</p>
             <p>Приглашаю тебя на свой юбилей в 2023 году.</p>
             <p>Пройди, пожалуйста, короткий опрос и в зависимости от ответов следи за дальнейшим развитием сайта.</p>
-            <p>Для входа в систему необходимо ввести свой номер телефона:</p>
         </div>
         <div class="block-poll-content w-75-content">
 
@@ -50,6 +49,7 @@ $this->registerJsFile('@web/js/mask.js');
             <?= $form->field($model, 'rememberMe')->checkbox([
                 'template' => "<div class=\"custom-control custom-checkbox\">{input}<span>Запомнит меня</span></div>\n<div class=\"col-lg-8\">{error}</div>",
             ]) ?>
+            <p>Для входа в систему необходимо ввести свой номер телефона:</p>
 
             <div class="form-group">
                 <div class="">
