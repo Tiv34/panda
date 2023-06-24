@@ -56,7 +56,7 @@ $this->registerCssFile('@web/css/carousel.css');
             <h1 class="text-center height-title" data-slide="3">Этап 3 «Стратегия» <br>(от 25 до 30 лет)</h1>
             <h3 class="text-center height-title" data-slide="4">Этап 4 «Реализация планов» <br>(от 30 до 38 лет)</h3>
             <h1 class="text-center height-title" data-slide="5">Этап 5 «Передышка» <br>(от 39 до 43 лет)</h1>
-            <h1 class="text-center height-title" data-slide="6">Этап 6 «Второе дыхание» <br>(43+ лет)</h1>
+            <h2 class="text-center height-title" data-slide="6">Этап 6 «Второе дыхание» <br>(43+ лет)</h2>
             <h1 class="text-center height-title" data-slide="7">Этап 7 <br> «Философия»</h1>
             </div>
             <div class="controles">
@@ -64,8 +64,8 @@ $this->registerCssFile('@web/css/carousel.css');
                 <h2 class="title-about active padding-last-title" data-id="1">Детский сад</h2>
                 <h2 class="title-about" data-id="2">Школа</h2>
                 <h2 class="title-about" data-id="3">Институт</h2>
-                <h2 class="title-about small-h2" data-id="4">Новая семья</h2>
-                <h2 class="title-about small-h2" data-id="5">Мечты и планы</h2>
+                <h2 class="title-about" data-id="4">Новая семья</h2>
+                <h2 class="title-about" data-id="5">Мечты и планы</h2>
                 <h2 class="title-about small-h2" data-id="6">Работать! Работать!<br> И еще раз работать!</h2>
                 <h2 class="title-about" data-id="7">Диагностика себя и окружения</h2>
                 <h2 class="title-about small-h2" data-id="8">Мне это и не снилось</h2>
@@ -178,8 +178,8 @@ $this->registerCssFile('@web/css/carousel.css');
 <!--                <div class="img-shadow-2"></div>-->
             </div>
             <div class="text col my-auto text-about" data-id="9">
-                <p class="fs-5">В разработке этап нового планирования.<br>
-                    Люблю общаться с людьми и слушать их мечты. Иногда «забираю» мечты друзей себе и делюсь своими.
+                <p class="fs-5">В разработке планирование нового этап.<br>
+                    Люблю общаться с людьми и слушать их мечты.<br> Иногда «забираю» мечты друзей себе и делюсь своими.
                 </p>
 <!--                <div class="img-shadow-2"></div>-->
             </div>

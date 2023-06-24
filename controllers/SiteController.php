@@ -265,4 +265,14 @@ class SiteController extends Controller
         }
         return [];
     }
+
+    public function actionPhotoInstall(): string
+    {
+        $users = User::find()->all();
+        foreach ($users as $user) {
+            $user->img = '/img/guest/' . $user->id . '.jpg';
+            $user->save();
+        }
+        return 'photo install';
+    }
 }
