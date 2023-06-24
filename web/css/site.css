@@ -122,6 +122,7 @@ hr.style-volna2 {
 }
 
 .submit-btm:hover {
+    color: #ffffff;
     background: #fd1645; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #062ffd, #ff0a3c); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #062ffd, #ff0a3c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

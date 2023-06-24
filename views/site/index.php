@@ -6,6 +6,7 @@
 
 /** @var $user */
 
+use yii\bootstrap5\Html;
 use yii\bootstrap5\LinkPager;
 
 $this->title = 'День рождения';
@@ -76,6 +77,9 @@ $this->registerCssFile('@web/css/popup.css');
     <!--    </div>-->
     <div class="row  pt-5 pb-5 bg-secondary-fitten bg-light">
         <?php echo $this->render('gallery', ['mini' => true]); ?>
+        <div class="text-center mt-4">
+            <a class="submit-btm" href="/site/gallery">Посмотреть больше</a>
+        </div>
     </div>
     <!--    <div class="row  pt-5 pb-5 bg-light">-->
     <!--        <h1 class="text-center">Wish List</h1>-->
