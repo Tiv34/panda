@@ -78,7 +78,7 @@ $this->registerCssFile('@web/css/popup.css');
     <div class="row  pt-5 pb-5 bg-secondary-fitten bg-light">
         <?php echo $this->render('gallery', ['mini' => true]); ?>
         <div class="text-center mt-4">
-            <a class="submit-btm" href="/site/gallery">Посмотреть больше</a>
+            <a class="submit-btm" href="/web/site/gallery">Посмотреть больше</a>
         </div>
     </div>
     <!--    <div class="row  pt-5 pb-5 bg-light">-->
