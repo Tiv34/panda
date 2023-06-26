@@ -49,7 +49,7 @@ $this->registerJsFile('@web/js/mask.js');
             <?= $form->field($model, 'rememberMe')->checkbox([
                 'template' => "<div class=\"custom-control custom-checkbox\">{input}<span>Запомнит меня</span></div>\n<div class=\"col-lg-8\">{error}</div>",
             ]) ?>
-            <p>Для входа в систему необходимо ввести свой номер телефона:</p>
+            <p>Для входа в систему необходимо ввести свой номер телефона</p>
 
             <div class="form-group">
                 <div class="">
