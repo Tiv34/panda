@@ -1,7 +1,7 @@
 <?php
 /** @var $mini */
 
-$this->registerCssFile('@web/css/gallery/gallery.css');
+$this->registerCssFile('@web/css/gallery/gallery.css?'.time());
 $class = '';
 if ($mini) {
     $this->registerJsFile('@web/js/gallery/gallery_min.js');

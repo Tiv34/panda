@@ -1,6 +1,6 @@
 <?php
 $this->registerJsFile('@web/js/carousel.js');
-$this->registerCssFile('@web/css/carousel.css');
+$this->registerCssFile('@web/css/carousel.css?'.time());
 ?>
 
 <div class="row about-block align-items-center">

@@ -8,11 +8,10 @@
 
 use yii\bootstrap5\Html;
 use yii\bootstrap5\LinkPager;
-
 $this->title = 'День рождения';
-$this->registerJsFile('@web/js/scroll.js');
-$this->registerJsFile('@web/js/popup.js');
-$this->registerCssFile('@web/css/popup.css');
+$this->registerJsFile('@web/js/scroll.js?'.time());
+$this->registerJsFile('@web/js/popup.js?'.time());
+$this->registerCssFile('@web/css/popup.css?'.time());
 
 ?>
 

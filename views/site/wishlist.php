@@ -2,7 +2,7 @@
 //$this->registerJsFile('@web/js/carousel.js');
 use yii\bootstrap5\Html;
 
-$this->registerCssFile('@web/css/wish-list.css');
+$this->registerCssFile('@web/css/wish-list.css?'.time());
 ?>
 
 <div class="row wish-list align-items-center bg-light">
