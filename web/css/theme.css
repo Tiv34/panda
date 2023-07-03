@@ -39,9 +39,6 @@
     align-items: center;
 }
 
-.wish-list {
-    font-size: 1.5em;
-}
 .site-login {
     margin-top: 60px;
 }
@@ -49,6 +46,7 @@
     text-align: center;
 }
 .hello-block-flex {
+    margin-top: 40px;
     display: flex;
     align-items: flex-start;
     margin-bottom: 24px;

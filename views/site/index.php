@@ -17,7 +17,7 @@ $this->registerCssFile('@web/css/popup.css');
 ?>
 
 <div class="site-index">
-    <div class="slideDown mb-5">
+    <div class="slideDown">
         <div class="row bg-secondary-fitten pt-5 pb-4 text-white">
             <div class="hello-block">
                 <div class="hello-block-flex">
@@ -37,6 +37,14 @@ $this->registerCssFile('@web/css/popup.css');
             <script src="/js/timer.js"></script>
         </div>
     </div>
+
+    <?php
+    if ($user->id === 1 || $user->id === 7) {
+        echo $this->render('wishlist');
+        echo $this->render('map');
+    }
+    ?>
+
     <?php echo $this->render('about'); ?>
     <div class="row text-center pt-5 pb-5 text-white bg-secondary-fitten guest-block" id="guest-block">
         <h1 class="text-center">Мое окружение: «Давайте знакомиться»</h1>
@@ -81,42 +89,5 @@ $this->registerCssFile('@web/css/popup.css');
             <a class="submit-btm" href="/web/site/gallery">Посмотреть больше</a>
         </div>
     </div>
-    <!--    <div class="row  pt-5 pb-5 bg-light">-->
-    <!--        <h1 class="text-center">Wish List</h1>-->
-    <!--        <div class="row">-->
-    <!--            <div class="col wish-list">-->
-    <!--                <table class="table">-->
-    <!--                    <thead class="thead-dark text-center">-->
-    <!--                    <tr>-->
-    <!--                        <th scope="col">Подарок</th>-->
-    <!--                        <th scope="col">Забронирован гостем</th>-->
-    <!--                    </tr>-->
-    <!--                    </thead>-->
-    <!--                    <tbody class="text-center">-->
-    <!--                    <tr class="table-success">-->
-    <!--                        <td>Цветы</td>-->
-    <!--                        <td>Да</td>-->
-    <!--                    </tr>-->
-    <!--                    <tr>-->
-    <!--                        <td>Браслет</td>-->
-    <!--                        <td>Нет</td>-->
-    <!--                    </tr>-->
-    <!--                    <tr>-->
-    <!--                        <td>Духи</td>-->
-    <!--                        <td>Нет</td>-->
-    <!--                    </tr>-->
-    <!--                    <tr class="table-success">-->
-    <!--                        <td>Мерседес</td>-->
-    <!--                        <td>Да</td>-->
-    <!--                    </tr>-->
-    <!--                    <tr class="table-success">-->
-    <!--                        <td>Поездка в швейцарию на лыжи</td>-->
-    <!--                        <td>Да</td>-->
-    <!--                    </tr>-->
-    <!--                    </tbody>-->
-    <!--                </table>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
 </div>
 

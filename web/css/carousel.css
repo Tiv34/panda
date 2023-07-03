@@ -1,6 +1,5 @@
 .about-block {
     padding: 40px 0;
-    border-radius: 80px 80px 0 0;
     overflow: hidden;
     background: white;
     position: relative;
@@ -247,10 +246,6 @@
 
     .padding-last-title-2 {
         width: 290px !important;
-    }
-
-    .about-block {
-        border-radius: 40px 40px 0 0;
     }
 
     .small-h2 {
