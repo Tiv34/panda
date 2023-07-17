@@ -41,7 +41,7 @@ use yii\widgets\ActiveForm;
                 </ul>
             </ul>
             <div class="w-100 align-items-center text-center">
-                <a class="btn btn-outline-success" href="/web/site/gallery">Свяжись с администратором сайта</a>
+                <a class="btn btn-outline-success" target="_blank" href="https://wa.me/79263754623">Свяжись с администратором сайта</a>
             </div>
         </div>
         <div class="wish-list">
@@ -94,9 +94,11 @@ use yii\widgets\ActiveForm;
                 <?php } ?>
                 </tbody>
             </table>
+            <?php if (empty($identity->present_id)) { ?>
             <div class="text-center mt-4 mb-4">
                 <?= Html::submitButton('Выбрать', ['class' => 'submit-wish-btm', 'data-dismiss' => 'alert', 'id' => 'wish-list-set', 'name' => 'wish-list-button']) ?>
             </div>
+            <?php } ?>
             <div id="loading-animate" class="w-100">
                 <img src='/img/loading.svg'/>
             </div>
