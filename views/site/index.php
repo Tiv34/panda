@@ -3,15 +3,14 @@
 /** @var yii\web\View $this */
 /** @var $models */
 /** @var $pages */
-
+/** @var $present */
 /** @var $user */
-
-use yii\bootstrap5\Html;
+use app\assets\IndexApp;
 use yii\bootstrap5\LinkPager;
+use yii\widgets\Pjax;
+
 $this->title = 'День рождения';
-$this->registerJsFile('@web/js/scroll.js?'.time());
-$this->registerJsFile('@web/js/popup.js?'.time());
-$this->registerCssFile('@web/css/popup.css?'.time());
+IndexApp::register($this);
 
 ?>
 
@@ -36,13 +35,13 @@ $this->registerCssFile('@web/css/popup.css?'.time());
             <script src="/js/timer.js"></script>
         </div>
     </div>
-
     <?php
-    if ($user->id === 1 || $user->id === 7) {
-        echo $this->render('wishlist');
+    if ($user->id === 1 || $user->id === 2 || $user->id === 7 || $user->id === 8) {
+        echo $this->render('wishlist', ['present' => $present, 'identity' => $user]);
         echo $this->render('map');
     }
     ?>
+
 
     <?php echo $this->render('about'); ?>
     <div class="row text-center pt-5 pb-5 text-white bg-secondary-fitten guest-block" id="guest-block">

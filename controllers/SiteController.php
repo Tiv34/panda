@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\dto\Present;
 use app\models\dto\User;
 use app\models\PollForm;
 use app\models\Question;
@@ -105,12 +106,35 @@ class SiteController extends Controller
                 $value->save();
             }
         }
+
+        $present = Present::find()->joinWith('presentUser')->all();
+
         return $this->render('index', [
             'models' => $models,
+            'present' => $present,
             'pages' => $pages,
             'user' => $identity
         ]);
 
+    }
+
+    public function actionPresent()
+    {
+        if(\Yii::$app->request->isAjax) {
+            $identity = Yii::$app->user->getIdentity();
+            $present_id = \Yii::$app->request->post('radio_option');
+            if (!empty($present_id)) {
+                $presentRecord = Present::findOne(['id'=>(int)$present_id]);
+                if ($presentRecord) {
+                    $user = User::findOne(['id'=>$identity->getId()]);
+                    $user->present_id = $present_id;
+                    $user->save();
+                }
+            }
+            $present = Present::find()->joinWith('presentUser')->all();
+            return $this->renderPartial('wishlist', ['present' => $present, 'identity' => $user]);
+        }
+        return false;
     }
 
     /**

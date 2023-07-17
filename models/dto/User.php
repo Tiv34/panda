@@ -18,6 +18,8 @@ use yii\db\ActiveRecord;
  * @property string    $last_online
  * @property integer   $group_guest
  * @property integer   $show
+ * @property integer   $present_id
+ * @property Present   $present
  */
 class User extends ActiveRecord
 {
