@@ -54,7 +54,6 @@ $config = [
             'rules' =>
                 [
                     'class' => \yii\web\UrlRule::class,
-                    'pattern' => '<controller>/<action>/<id>',
                     'route' => '<controller>/<action>',
                 ]
         ],
