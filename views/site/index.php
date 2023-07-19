@@ -35,12 +35,13 @@ IndexApp::register($this);
             <script src="/js/timer.js"></script>
         </div>
     </div>
-        <?php
-        if ($user->id === 1 || $user->id === 2 || $user->id === 7 || $user->id === 8) {
-            echo $this->render('wishlist', ['present' => $present, 'identity' => $user]);
-            echo $this->render('map');
-        }
-        ?>
+    <?php
+    if ($user->id !== 1) {
+        echo $this->render('wishlist', ['present' => $present, 'identity' => $user]);
+        echo $this->render('map');
+    }
+    ?>
+
 
 
 
