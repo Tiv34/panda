@@ -1,7 +1,7 @@
-<div class="row text-white where-block bg-secondary-fitten">
+<div class="row text-white where-block bg-secondary-fitten font-size-more">
     <h1 class="text-center mt-4 mb-4">Организационные вопросы.</h1>
     <div>
-        <p>Мероприятие пройдёт: 2 сентября в 14:00</p>
+        <h4 class="text-center">Мероприятие пройдёт - 2 сентября в 14:00</h4>
         <div class="row text-white timer-block">
             <hr class="style-volna2">
             <script src="/js/timer2.js"></script>

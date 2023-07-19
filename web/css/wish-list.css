@@ -9,6 +9,9 @@
 .marker-int-white {
     list-style-type: disc;
 }
+.font-size-more {
+    font-size: larger;
+}
 #loading-animate {
     position: absolute;
     display: flex;

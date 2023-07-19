@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /** @var $identity */
 ?>
 
-<div id="wish-list-block">
+<div id="wish-list-block" class="font-size-more">
 
     <div class="row wish-list align-items-center bg-light">
         <?php $form = ActiveForm::begin(); ?>
