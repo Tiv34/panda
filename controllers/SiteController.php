@@ -120,8 +120,6 @@ class SiteController extends Controller
 
     public function actionPresent()
     {
-        var_dump(111);die;
-
         if(\Yii::$app->request->isAjax) {
             $identity = Yii::$app->user->getIdentity();
             $present_id = \Yii::$app->request->post('radio_option');

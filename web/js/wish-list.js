@@ -2,7 +2,7 @@ $(document).ready(function () {
         $('form').on('beforeSubmit', function(){
             var data = $(this).serialize();
             $.ajax({
-                url: '/site/present',
+                url: '/web/site/present',
                 type: 'POST',
                 data: data,
                 beforeSend: function() {
