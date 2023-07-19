@@ -2,6 +2,11 @@
     <h1 class="text-center mt-4 mb-4">Организационные вопросы.</h1>
     <div>
         <p>Мероприятие пройдёт: 2 сентября в 14:00</p>
+        <div class="row text-white pb-5 timer-block">
+            <hr class="style-volna2">
+            <script src="/js/timer2.js"></script>
+            <hr class="style-volna2 mt-4">
+        </div>
         <p>Место: Ресторан «Времена года» в Центральном Парке Культуры и Отдыха им. Горького. Главный вход в ресторан на первом этаже.</p>
         <p>Адрес: ул. Крымский Вал, 9, стр.20, Москва</p>
         <p>Дресс код:</p>
@@ -23,10 +28,7 @@
             <li class="marker-int-white">В 23:59 2 сентября «я календарь переверну!»</li>
         </ul>
         <div>
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A977ad6799fb325929a0137e4a44c5ed6f4ee48900b164e1b1a1d3a18aec05a41&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>        </div>
-        <div class="row text-white pb-5 timer-block">
-            <hr class="style-volna2">
-            <script src="/js/timer2.js"></script>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A977ad6799fb325929a0137e4a44c5ed6f4ee48900b164e1b1a1d3a18aec05a41&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
     </div>
 </div>
