@@ -27,7 +27,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['login', 'logout', 'index', 'poll', 'gallery'],
+                'only' => ['login', 'logout', 'index', 'poll', 'gallery', 'present'],
                 'rules' => [
                     [
                         'allow' => true,
@@ -36,7 +36,7 @@ class SiteController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['index', 'poll', 'logout', 'gallery'],
+                        'actions' => ['index', 'poll', 'logout', 'gallery', 'present'],
                         'roles' => ['@'],
                     ],
                 ],
@@ -120,6 +120,8 @@ class SiteController extends Controller
 
     public function actionPresent()
     {
+        var_dump(111);die;
+
         if(\Yii::$app->request->isAjax) {
             $identity = Yii::$app->user->getIdentity();
             $present_id = \Yii::$app->request->post('radio_option');
@@ -134,7 +136,6 @@ class SiteController extends Controller
             $present = Present::find()->joinWith('presentUser')->all();
             return $this->renderAjax('wishlist', ['present' => $present, 'identity' => $user]);
         }
-        var_dump(111);die;
         return false;
     }
 
