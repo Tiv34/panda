@@ -65,6 +65,8 @@ $config = [
 
         'assetManager' => [
             'linkAssets' => true,
+            'appendTimestamp' => true,
+            'forceCopy'=>true,
         ],
     ],
     'params' => $params,
