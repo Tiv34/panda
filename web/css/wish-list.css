@@ -6,6 +6,9 @@
 .wish-list li {
     list-style-type: disc;
 }
+.marker-int-white {
+    list-style-type: disc;
+}
 #loading-animate {
     position: absolute;
     display: flex;
