@@ -62,6 +62,10 @@ $config = [
         'authManager' => [
             'class' => 'yii\rbac\PhpManager',
         ],
+
+        'assetManager' => [
+            'linkAssets' => true,
+        ],
     ],
     'params' => $params,
 ];
