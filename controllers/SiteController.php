@@ -132,7 +132,7 @@ class SiteController extends Controller
                 }
             }
             $present = Present::find()->joinWith('presentUser')->all();
-            return $this->renderPartial('wishlist', ['present' => $present, 'identity' => $user]);
+            return $this->renderAjax('wishlist', ['present' => $present, 'identity' => $user]);
         }
         return false;
     }
